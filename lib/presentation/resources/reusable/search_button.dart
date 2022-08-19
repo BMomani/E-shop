@@ -2,14 +2,13 @@ import 'package:e_shop/presentation/resources/asset_manager.dart';
 import 'package:e_shop/presentation/resources/color_manager.dart';
 import 'package:e_shop/presentation/resources/font_manager.dart';
 import 'package:e_shop/presentation/resources/reusable/animation_route.dart';
-import 'package:e_shop/presentation/resources/string_manager.dart';
 import 'package:e_shop/presentation/resources/text_style_manager.dart';
 import 'package:e_shop/presentation/resources/value_manager.dart';
 import 'package:e_shop/presentation/views/home_view/help_views/search_view.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-
 
 class SearchButton extends StatelessWidget {
   const SearchButton({Key? key}) : super(key: key);
@@ -21,7 +20,7 @@ class SearchButton extends StatelessWidget {
         Navigator.of(context).push(
           AnimationRoute(
             pageBuilder: (context, animation1, animation2) =>
-            const SearchView(),
+                const SearchView(),
           ),
         );
       },
@@ -35,7 +34,9 @@ class SearchButton extends StatelessWidget {
           ),
         ),
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal:AppPaddingManager.p12,),
+          padding: const EdgeInsets.symmetric(
+            horizontal: AppPaddingManager.p12,
+          ),
           child: Row(
             children: [
               SvgPicture.asset(
@@ -43,11 +44,16 @@ class SearchButton extends StatelessWidget {
                 width: AppSizeManager.s16.w,
                 height: AppSizeManager.s16.h,
               ),
-              SizedBox(width: AppSizeManager.s14.w,),
-              Text(StringManager.searchProduct,style: TextStyleManager.getRegularTextStyle(
-                color: ColorManager.textButtonColor.withOpacity(.5),
-                fontSize: FontSizeManager.s18.sp,
-              ),),
+              SizedBox(
+                width: AppSizeManager.s14.w,
+              ),
+              Text(
+                tr("searchProduct"),
+                style: TextStyleManager.getRegularTextStyle(
+                  color: ColorManager.textButtonColor.withOpacity(.5),
+                  fontSize: FontSizeManager.s18.sp,
+                ),
+              ),
             ],
           ),
         ),

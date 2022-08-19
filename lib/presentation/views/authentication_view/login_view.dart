@@ -5,11 +5,11 @@ import 'package:e_shop/presentation/resources/reusable/Primary_button.dart';
 import 'package:e_shop/presentation/resources/reusable/custom_text_form_filed.dart';
 import 'package:e_shop/presentation/resources/reusable/sign_divider.dart';
 import 'package:e_shop/presentation/resources/reusable/social_btton.dart';
-import 'package:e_shop/presentation/resources/string_manager.dart';
 import 'package:e_shop/presentation/resources/text_style_manager.dart';
 import 'package:e_shop/presentation/resources/value_manager.dart';
 import 'package:e_shop/presentation/views/authentication_view/forget_password.dart';
 import 'package:e_shop/presentation/views/authentication_view/register_view.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -31,14 +31,14 @@ class LoginView extends StatelessWidget {
             textBaseline: TextBaseline.alphabetic,
             children: [
               Text(
-                StringManager.signInButton,
+                tr("signInButton"),
                 style: Theme.of(context).textTheme.headline6,
               ),
               SizedBox(
                 height: AppSizeManager.s11.h,
               ),
               Text(
-                StringManager.signInSubtitle,
+                tr("signInSubtitle"),
                 style: TextStyleManager.getMediumTextStyle(
                   color: ColorManager.registerSubtitle,
                   letterSpacing: 0,
@@ -56,14 +56,14 @@ class LoginView extends StatelessWidget {
                       validator: (value) {},
                       keyboardType: TextInputType.emailAddress,
                       icon: Icons.email_outlined,
-                      label: StringManager.email,
+                      label: tr("email"),
                     ),
                     CustomTextFormFiled(
                       validator: (value) {},
                       obscureText: true,
                       keyboardType: TextInputType.visiblePassword,
                       icon: Icons.lock_outline_rounded,
-                      label: StringManager.password,
+                      label: tr("password"),
                     ),
                   ],
                 ),
@@ -84,7 +84,7 @@ class LoginView extends StatelessWidget {
                     width: AppSizeManager.s10,
                   ),
                   Text(
-                    StringManager.rememberMe,
+                    tr("rememberMe"),
                     style: TextStyleManager.getMediumTextStyle(
                       color: ColorManager.haveAccountTextColor,
                       letterSpacing: 0,
@@ -102,7 +102,7 @@ class LoginView extends StatelessWidget {
                       );
                     },
                     child: Text(
-                      StringManager.forgetPasswordTextButton,
+                      tr("forgetPasswordTextButton"),
                       style: TextStyleManager.getMediumTextStyle(
                         color: ColorManager.textButtonColor,
                         letterSpacing: 0,
@@ -117,18 +117,18 @@ class LoginView extends StatelessWidget {
               ),
               PrimaryButton(
                 width: (AppSizeManager.sWidth - AppSizeManager.s16 * 2).w,
-                buttonTitle: StringManager.signInButton,
+                buttonTitle: tr("signInButton"),
                 onPress: () {},
               ),
               SizedBox(
                 height: AppSizeManager.s28.h,
               ),
-              const SignDivider(text: StringManager.orSignInWith),
+              SignDivider(text: tr("orSignInWith")),
               SizedBox(
                 height: AppSizeManager.s28.h,
               ),
               SocialButton(
-                text: StringManager.google,
+                text: tr("google"),
                 icon: SvgPicture.asset(
                   ImageManager.google,
                   width: AppSizeManager.s18.w,
@@ -144,7 +144,7 @@ class LoginView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   SocialButton(
-                    text: StringManager.facebook,
+                    text: tr("facebook"),
                     icon: SvgPicture.asset(
                       ImageManager.facebook,
                       width: AppSizeManager.s18.w,
@@ -154,7 +154,7 @@ class LoginView extends StatelessWidget {
                     width: AppSizeManager.s170.w,
                   ),
                   SocialButton(
-                    text: StringManager.apple,
+                    text: tr("apple"),
                     icon: SvgPicture.asset(
                       ImageManager.apple,
                       width: AppSizeManager.s18.w,
@@ -173,7 +173,7 @@ class LoginView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    StringManager.alreadyHaveAccount,
+                    tr("alreadyHaveAccount"),
                     style: TextStyleManager.getMediumTextStyle(
                         fontSize: 12,
                         letterSpacing: 0,
@@ -192,7 +192,7 @@ class LoginView extends StatelessWidget {
                       );
                     },
                     child: Text(
-                      StringManager.signUpButton,
+                      tr("signUpButton"),
                       style: TextStyleManager.getMediumTextStyle(
                           fontSize: 12,
                           letterSpacing: 0,

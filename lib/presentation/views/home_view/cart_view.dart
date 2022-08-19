@@ -10,6 +10,7 @@ import 'package:e_shop/presentation/resources/value_manager.dart';
 import 'package:e_shop/presentation/view_model/home_view_model.dart';
 import 'package:e_shop/presentation/views/home_view/help_views/checkout.dart';
 import 'package:e_shop/presentation/views/home_view/help_views/side_menu.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -32,7 +33,7 @@ class CartView extends StatelessWidget {
           ),
         ),
         title: Text(
-          StringManager.navigationBarCart,
+          tr("navigationBarCart"),
           style: Theme.of(context).textTheme.headline5,
         ),
         actions: [
@@ -41,7 +42,7 @@ class CartView extends StatelessWidget {
               Navigator.of(context).push(
                 AnimationRoute(
                   pageBuilder: (context, animation, secondaryAnimation) =>
-                  const SideMenu(),
+                      const SideMenu(),
                 ),
               );
             },
@@ -102,7 +103,7 @@ class CartView extends StatelessWidget {
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
-                                        StringManager.casualPants,
+                                        tr("casualPants"),
                                         overflow: TextOverflow.ellipsis,
                                         maxLines: 1,
                                         style:
@@ -114,9 +115,7 @@ class CartView extends StatelessWidget {
                                       Row(
                                         children: [
                                           Text(
-                                            StringManager.prise +
-                                                ' - ' +
-                                                StringManager.prise2,
+                                            tr("prise") + ' - ' + tr("prise2"),
                                             style: TextStyleManager
                                                 .getMediumTextStyle(
                                               color: ColorManager
@@ -127,7 +126,7 @@ class CartView extends StatelessWidget {
                                           ),
                                           const Spacer(),
                                           Text(
-                                            '-' + StringManager.discount + '%',
+                                            '-' + tr("discount") + '%',
                                             style: TextStyleManager
                                                 .getMediumTextStyle(
                                               color: ColorManager.primaryColor,
@@ -138,7 +137,7 @@ class CartView extends StatelessWidget {
                                             width: AppSizeManager.s10.w,
                                           ),
                                           Text(
-                                            StringManager.actualPrice,
+                                            tr("actualPrice"),
                                             style: TextStyle(
                                               fontWeight: FontWeight.w500,
                                               color: ColorManager
@@ -156,7 +155,7 @@ class CartView extends StatelessWidget {
                                         child: Row(
                                           children: [
                                             Text(
-                                              StringManager.color,
+                                              tr("color"),
                                               style: TextStyleManager
                                                   .getBoldTextStyle(
                                                 color: ColorManager.cartColors
@@ -201,7 +200,7 @@ class CartView extends StatelessWidget {
                                         child: Row(
                                           children: [
                                             Text(
-                                              StringManager.size,
+                                              tr("size"),
                                               style: TextStyleManager
                                                   .getBoldTextStyle(
                                                 color: ColorManager.cartColors
@@ -308,7 +307,7 @@ class CartView extends StatelessWidget {
                                                 Expanded(
                                                   child: Center(
                                                     child: Text(
-                                                      StringManager.counter,
+                                                      tr("counter"),
                                                       style: TextStyleManager
                                                           .getMediumTextStyle(
                                                         color: ColorManager
@@ -391,7 +390,7 @@ class CartView extends StatelessWidget {
                           cursorColor: ColorManager.primaryFontColor,
                           decoration: InputDecoration(
                             border: InputBorder.none,
-                            hintText: StringManager.promoCode,
+                            hintText: tr("promoCode"),
                             hintStyle: TextStyleManager.getMediumTextStyle(
                               color: ColorManager.accentFontColor.withOpacity(
                                 .6,
@@ -429,25 +428,24 @@ class CartView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         CartText(
-                            text: StringManager.subtotal,
-                            prise: StringManager.subtotalPrice),
+                            text: tr("subtotal"), prise: tr("subtotalPrice")),
                         CartText(
-                            text: StringManager.discountOnOrder,
-                            prise: StringManager.discountOnOrderPercent),
+                            text: tr("discountOnOrder"),
+                            prise: tr("discountOnOrderPercent")),
                         CartText(
-                            text: StringManager.couponDiscount,
-                            prise: StringManager.couponDiscountPercent),
+                            text: tr("couponDiscount"),
+                            prise: tr("couponDiscountPercent")),
                         CartText(
-                          text: StringManager.deliveryCharges,
-                          prise: StringManager.deliveryChargesPrice,
+                          text: tr("deliveryCharges"),
+                          prise: tr("deliveryChargesPrice"),
                           style2: TextStyleManager.getMediumTextStyle(
                             color: ColorManager.freeColor,
                             fontSize: FontSizeManager.s10.sp,
                           ),
                         ),
                         CartText(
-                          text: StringManager.total,
-                          prise: StringManager.totalPrice,
+                          text: tr("total"),
+                          prise: tr("totalPrice"),
                           style1: TextStyleManager.getBoldTextStyle(
                             color: ColorManager.primaryFontColor,
                             fontSize: FontSizeManager.s16.sp,
@@ -467,13 +465,14 @@ class CartView extends StatelessWidget {
               ),
               PrimaryButton(
                 width: AppSizeManager.s380.w,
-                buttonTitle: StringManager.proceedToCheckout,
+                buttonTitle: tr("proceedToCheckout"),
                 onPress: () {
-                    Navigator.of(context).push(
-                      AnimationRoute(
-                        pageBuilder: (context, animation, secondaryAnimation) => Checkout(),
-                      ),
-                    );
+                  Navigator.of(context).push(
+                    AnimationRoute(
+                      pageBuilder: (context, animation, secondaryAnimation) =>
+                          Checkout(),
+                    ),
+                  );
                 },
               ),
             ],

@@ -6,7 +6,6 @@ import 'package:e_shop/presentation/resources/reusable/carosul.dart';
 import 'package:e_shop/presentation/resources/reusable/dot_indicator.dart';
 import 'package:e_shop/presentation/resources/reusable/rate_bar.dart';
 import 'package:e_shop/presentation/resources/reusable/search_button.dart';
-import 'package:e_shop/presentation/resources/string_manager.dart';
 import 'package:e_shop/presentation/resources/text_style_manager.dart';
 import 'package:e_shop/presentation/resources/value_manager.dart';
 import 'package:e_shop/presentation/view_model/home_view_model.dart';
@@ -17,6 +16,7 @@ import 'package:e_shop/presentation/views/home_view/help_views/search_filter_vie
 import 'package:e_shop/presentation/views/home_view/help_views/side_menu.dart';
 import 'package:e_shop/presentation/views/home_view/help_views/sub_gategory.dart';
 import 'package:e_shop/presentation/views/home_view/help_views/trendy_view.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -46,7 +46,8 @@ class HomeView extends StatelessWidget {
               onTap: () {
                 Navigator.of(context).push(
                   AnimationRoute(
-                    pageBuilder: (context, animation1, animation2) => NotificationView(),
+                    pageBuilder: (context, animation1, animation2) =>
+                        NotificationView(),
                   ),
                 );
               },
@@ -64,7 +65,7 @@ class HomeView extends StatelessWidget {
               Navigator.of(context).push(
                 AnimationRoute(
                   pageBuilder: (context, animation1, animation2) =>
-                  const SideMenu(),
+                      const SideMenu(),
                 ),
               );
             },
@@ -85,7 +86,7 @@ class HomeView extends StatelessWidget {
           child: Column(
             children: [
               Text(
-                StringManager.findYourFavoriteProductsOnEShopCommerce,
+                tr("findYourFavoriteProductsOnEShopCommerce"),
                 style: TextStyleManager.getSemiBoldTextStyle(
                   color: ColorManager.primaryFontColor,
                   letterSpacing: 0,
@@ -104,7 +105,7 @@ class HomeView extends StatelessWidget {
                       Navigator.of(context).push(
                         AnimationRoute(
                           pageBuilder: (context, animation1, animation2) =>
-                          const FilterView(),
+                              const FilterView(),
                         ),
                       );
                     },
@@ -129,7 +130,7 @@ class HomeView extends StatelessWidget {
                 height: AppSizeManager.s20.h,
               ),
               Consumer<HomeViewModel>(
-                builder: (context,home,child) => Carousel(
+                builder: (context, home, child) => Carousel(
                     height: AppSizeManager.s240.h,
                     items: [
                       GestureDetector(
@@ -137,7 +138,7 @@ class HomeView extends StatelessWidget {
                           Navigator.of(context).push(
                             AnimationRoute(
                               pageBuilder: (context, animation1, animation2) =>
-                              const SubCategory(),
+                                  const SubCategory(),
                             ),
                           );
                         },
@@ -160,7 +161,8 @@ class HomeView extends StatelessWidget {
                               children: [
                                 Container(
                                   color: ColorManager.offerColor,
-                                  width: MediaQuery.of(context).size.width * 0.42,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.42,
                                   child: SizedBox(
                                     height: AppSizeManager.s120,
                                     child: Column(
@@ -168,9 +170,9 @@ class HomeView extends StatelessWidget {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          StringManager.welcome,
-                                          style:
-                                              TextStyleManager.getMediumTextStyle(
+                                          tr("welcome"),
+                                          style: TextStyleManager
+                                              .getMediumTextStyle(
                                                   color: ColorManager
                                                       .homeCarouselTextColor,
                                                   fontSize:
@@ -181,11 +183,11 @@ class HomeView extends StatelessWidget {
                                         ),
                                         Expanded(
                                           child: Text(
-                                            StringManager.offer,
-                                            style:
-                                                TextStyleManager.getBoldTextStyle(
-                                                    color:
-                                                        ColorManager.primaryColor,
+                                            tr("offer"),
+                                            style: TextStyleManager
+                                                .getBoldTextStyle(
+                                                    color: ColorManager
+                                                        .primaryColor,
                                                     fontSize:
                                                         FontSizeManager.s38.sp),
                                           ),
@@ -213,7 +215,7 @@ class HomeView extends StatelessWidget {
                           Navigator.of(context).push(
                             AnimationRoute(
                               pageBuilder: (context, animation1, animation2) =>
-                              const SubCategory(),
+                                  const SubCategory(),
                             ),
                           );
                         },
@@ -236,7 +238,8 @@ class HomeView extends StatelessWidget {
                               children: [
                                 Container(
                                   color: ColorManager.offerColor,
-                                  width: MediaQuery.of(context).size.width * 0.42,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.42,
                                   child: SizedBox(
                                     height: AppSizeManager.s120,
                                     child: Column(
@@ -244,9 +247,9 @@ class HomeView extends StatelessWidget {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          StringManager.welcome,
-                                          style:
-                                              TextStyleManager.getMediumTextStyle(
+                                          tr("welcome"),
+                                          style: TextStyleManager
+                                              .getMediumTextStyle(
                                                   color: ColorManager
                                                       .homeCarouselTextColor,
                                                   fontSize:
@@ -257,11 +260,11 @@ class HomeView extends StatelessWidget {
                                         ),
                                         Expanded(
                                           child: Text(
-                                            StringManager.offer,
-                                            style:
-                                                TextStyleManager.getBoldTextStyle(
-                                                    color:
-                                                        ColorManager.primaryColor,
+                                            tr("offer"),
+                                            style: TextStyleManager
+                                                .getBoldTextStyle(
+                                                    color: ColorManager
+                                                        .primaryColor,
                                                     fontSize:
                                                         FontSizeManager.s38.sp),
                                           ),
@@ -289,7 +292,7 @@ class HomeView extends StatelessWidget {
                           Navigator.of(context).push(
                             AnimationRoute(
                               pageBuilder: (context, animation1, animation2) =>
-                              const SubCategory(),
+                                  const SubCategory(),
                             ),
                           );
                         },
@@ -312,7 +315,8 @@ class HomeView extends StatelessWidget {
                               children: [
                                 Container(
                                   color: ColorManager.offerColor,
-                                  width: MediaQuery.of(context).size.width * 0.42,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.42,
                                   child: SizedBox(
                                     height: AppSizeManager.s120,
                                     child: Column(
@@ -320,9 +324,9 @@ class HomeView extends StatelessWidget {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          StringManager.welcome,
-                                          style:
-                                              TextStyleManager.getMediumTextStyle(
+                                          tr("welcome"),
+                                          style: TextStyleManager
+                                              .getMediumTextStyle(
                                                   color: ColorManager
                                                       .homeCarouselTextColor,
                                                   fontSize:
@@ -333,11 +337,11 @@ class HomeView extends StatelessWidget {
                                         ),
                                         Expanded(
                                           child: Text(
-                                            StringManager.offer,
-                                            style:
-                                                TextStyleManager.getBoldTextStyle(
-                                                    color:
-                                                        ColorManager.primaryColor,
+                                            tr("offer"),
+                                            style: TextStyleManager
+                                                .getBoldTextStyle(
+                                                    color: ColorManager
+                                                        .primaryColor,
                                                     fontSize:
                                                         FontSizeManager.s38.sp),
                                           ),
@@ -372,7 +376,7 @@ class HomeView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    StringManager.bestOffers,
+                    tr("bestOffers"),
                     style: TextStyleManager.getMediumTextStyle(
                       color: ColorManager.subFontColor,
                       letterSpacing: 0,
@@ -384,12 +388,12 @@ class HomeView extends StatelessWidget {
                       Navigator.of(context).push(
                         AnimationRoute(
                           pageBuilder: (context, animation1, animation2) =>
-                          const OffersView(),
+                              const OffersView(),
                         ),
                       );
                     },
                     child: Text(
-                      StringManager.seeAll,
+                      tr("seeAll"),
                       style: TextStyleManager.getRegularTextStyle(
                         color: ColorManager.seeAllColor,
                         letterSpacing: 0,
@@ -438,7 +442,7 @@ class HomeView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    StringManager.popularProduct,
+                    tr("popularProduct"),
                     style: TextStyleManager.getMediumTextStyle(
                       color: ColorManager.subFontColor,
                       letterSpacing: 0,
@@ -450,12 +454,12 @@ class HomeView extends StatelessWidget {
                       Navigator.of(context).push(
                         AnimationRoute(
                           pageBuilder: (context, animation1, animation2) =>
-                          const SubCategory(),
+                              const SubCategory(),
                         ),
                       );
                     },
                     child: Text(
-                      StringManager.seeAll,
+                      tr("seeAll"),
                       style: TextStyleManager.getRegularTextStyle(
                         color: ColorManager.seeAllColor,
                         letterSpacing: 0,
@@ -488,7 +492,7 @@ class HomeView extends StatelessWidget {
                           Navigator.of(context).push(
                             AnimationRoute(
                               pageBuilder: (context, animation1, animation2) =>
-                              const ProductDetail(),
+                                  const ProductDetail(),
                             ),
                           );
                         },
@@ -518,7 +522,7 @@ class HomeView extends StatelessWidget {
                                   children: [
                                     Expanded(
                                       child: Text(
-                                        StringManager.caesarMensHoodie,
+                                        tr("caesarMensHoodie"),
                                         maxLines: 2,
                                         overflow: TextOverflow.ellipsis,
                                         style:
@@ -546,7 +550,7 @@ class HomeView extends StatelessWidget {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
-                                      StringManager.prise + '\$',
+                                      tr("prise") + '\$',
                                       style:
                                           TextStyleManager.getRegularTextStyle(
                                         color: ColorManager.seeAllColor,
@@ -576,7 +580,7 @@ class HomeView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    StringManager.trendyProduct,
+                    tr("trendyProduct"),
                     style: TextStyleManager.getMediumTextStyle(
                       color: ColorManager.subFontColor,
                       letterSpacing: 0,
@@ -588,12 +592,12 @@ class HomeView extends StatelessWidget {
                       Navigator.of(context).push(
                         AnimationRoute(
                           pageBuilder: (context, animation1, animation2) =>
-                          const TrendyView(),
+                              const TrendyView(),
                         ),
                       );
                     },
                     child: Text(
-                      StringManager.seeAll,
+                      tr("seeAll"),
                       style: TextStyleManager.getRegularTextStyle(
                         color: ColorManager.seeAllColor,
                         letterSpacing: 0,
@@ -623,7 +627,7 @@ class HomeView extends StatelessWidget {
                         Navigator.of(context).push(
                           AnimationRoute(
                             pageBuilder: (context, animation1, animation2) =>
-                            const ProductDetail(),
+                                const ProductDetail(),
                           ),
                         );
                       },
@@ -655,7 +659,7 @@ class HomeView extends StatelessWidget {
                         Navigator.of(context).push(
                           AnimationRoute(
                             pageBuilder: (context, animation1, animation2) =>
-                            const SubCategory(),
+                                const SubCategory(),
                           ),
                         );
                       },
@@ -674,7 +678,7 @@ class HomeView extends StatelessWidget {
                               height: AppSizeManager.s10.h,
                             ),
                             Text(
-                              StringManager.hoodies,
+                              tr("hoodies"),
                               style: TextStyleManager.getMediumTextStyle(
                                 color: ColorManager.subFontColor,
                               ),

@@ -3,11 +3,11 @@ import 'package:e_shop/presentation/resources/color_manager.dart';
 import 'package:e_shop/presentation/resources/font_manager.dart';
 import 'package:e_shop/presentation/resources/reusable/animation_route.dart';
 import 'package:e_shop/presentation/resources/reusable/custom_switch.dart';
-import 'package:e_shop/presentation/resources/string_manager.dart';
 import 'package:e_shop/presentation/resources/text_style_manager.dart';
 import 'package:e_shop/presentation/resources/value_manager.dart';
 import 'package:e_shop/presentation/views/home_view/help_views/notification_view.dart';
 import 'package:e_shop/presentation/views/home_view/profile_view.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -54,7 +54,7 @@ class SideMenu extends StatelessWidget {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Text(
-                            StringManager.name,
+                            tr("name"),
                             style: TextStyleManager.getBoldTextStyle(
                               color: ColorManager.primaryColor,
                               fontSize: FontSizeManager.s14.sp,
@@ -64,7 +64,7 @@ class SideMenu extends StatelessWidget {
                             height: AppSizeManager.s10.h,
                           ),
                           Text(
-                            StringManager.sideAddress,
+                            tr("sideAddress"),
                             style: TextStyleManager.getRegularTextStyle(
                               color: ColorManager.primaryColor,
                               fontSize: FontSizeManager.s10.sp,
@@ -97,10 +97,10 @@ class SideMenu extends StatelessWidget {
                 itemCount: 10,
                 itemBuilder: (BuildContext context, int index) {
                   return GestureDetector(
-                    onTap: (){
-                      switch(index){
+                    onTap: () {
+                      switch (index) {
                         case 0:
-                            /*Navigator.of(context).push(
+                          /*Navigator.of(context).push(
                               AnimationRoute(
                                 pageBuilder: (context, animation, secondaryAnimation) =>
                                 const SideMenu(),
@@ -108,15 +108,16 @@ class SideMenu extends StatelessWidget {
                             );*/
                           break;
                         case 1:
-                        Navigator.of(context).push(
-                              AnimationRoute(
-                                pageBuilder: (context, animation, secondaryAnimation) =>
-                                const ProfileView(),
-                              ),
-                            );
+                          Navigator.of(context).push(
+                            AnimationRoute(
+                              pageBuilder:
+                                  (context, animation, secondaryAnimation) =>
+                                      const ProfileView(),
+                            ),
+                          );
                           break;
                         case 2:
-                        /*Navigator.of(context).push(
+                          /*Navigator.of(context).push(
                               AnimationRoute(
                                 pageBuilder: (context, animation, secondaryAnimation) =>
                                 const SideMenu(),
@@ -124,7 +125,7 @@ class SideMenu extends StatelessWidget {
                             );*/
                           break;
                         case 3:
-                        /*Navigator.of(context).push(
+                          /*Navigator.of(context).push(
                               AnimationRoute(
                                 pageBuilder: (context, animation, secondaryAnimation) =>
                                 const SideMenu(),
@@ -132,7 +133,7 @@ class SideMenu extends StatelessWidget {
                             );*/
                           break;
                         case 4:
-                        /*Navigator.of(context).push(
+                          /*Navigator.of(context).push(
                               AnimationRoute(
                                 pageBuilder: (context, animation, secondaryAnimation) =>
                                 const SideMenu(),
@@ -140,14 +141,16 @@ class SideMenu extends StatelessWidget {
                             );*/
                           break;
                         case 5:
-                        Navigator.of(context).push(
-                              AnimationRoute(
-                                pageBuilder: (context, animation, secondaryAnimation) => NotificationView(),
-                              ),
-                            );
+                          Navigator.of(context).push(
+                            AnimationRoute(
+                              pageBuilder:
+                                  (context, animation, secondaryAnimation) =>
+                                      NotificationView(),
+                            ),
+                          );
                           break;
                         case 6:
-                        /*Navigator.of(context).push(
+                          /*Navigator.of(context).push(
                               AnimationRoute(
                                 pageBuilder: (context, animation, secondaryAnimation) =>
                                 const SideMenu(),
@@ -155,7 +158,7 @@ class SideMenu extends StatelessWidget {
                             );*/
                           break;
                         case 7:
-                        /*Navigator.of(context).push(
+                          /*Navigator.of(context).push(
                               AnimationRoute(
                                 pageBuilder: (context, animation, secondaryAnimation) =>
                                 const SideMenu(),
@@ -163,14 +166,13 @@ class SideMenu extends StatelessWidget {
                             );*/
                           break;
                         case 8:
-                        /*Navigator.of(context).push(
+                          /*Navigator.of(context).push(
                               AnimationRoute(
                                 pageBuilder: (context, animation, secondaryAnimation) =>
                                 const SideMenu(),
                               ),
                             );*/
                           break;
-
                       }
                     },
                     child: SizedBox(
@@ -181,17 +183,16 @@ class SideMenu extends StatelessWidget {
                           ImageManager.sideMenu[index],
                         ),
                         title: Text(
-                          StringManager.sideMenuItemsTitle[index],
+                          tr("sideMenuItemsTitle")[index],
                           style: TextStyleManager.getBoldTextStyle(
                               color: ColorManager.primaryFontColor,
                               fontSize: FontSizeManager.s14.sp),
                         ),
-                        trailing:
-                            index == StringManager.sideMenuItemsTitle.length - 1
-                                ? CustomSwitch(value: true, onChanged: (value) {})
-                                : SvgPicture.asset(
-                                    ImageManager.right,
-                                  ),
+                        trailing: index == tr("sideMenuItemsTitle").length - 1
+                            ? CustomSwitch(value: true, onChanged: (value) {})
+                            : SvgPicture.asset(
+                                ImageManager.right,
+                              ),
                       ),
                     ),
                   );

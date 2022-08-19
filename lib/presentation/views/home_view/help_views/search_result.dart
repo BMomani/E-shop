@@ -2,10 +2,10 @@ import 'package:e_shop/presentation/resources/asset_manager.dart';
 import 'package:e_shop/presentation/resources/color_manager.dart';
 import 'package:e_shop/presentation/resources/font_manager.dart';
 import 'package:e_shop/presentation/resources/reusable/rate_bar.dart';
-import 'package:e_shop/presentation/resources/string_manager.dart';
 import 'package:e_shop/presentation/resources/text_style_manager.dart';
 import 'package:e_shop/presentation/resources/value_manager.dart';
 import 'package:e_shop/presentation/views/home_view/help_views/search_filter_view.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -27,7 +27,7 @@ class SearchResult extends StatelessWidget {
           ),
         ),
         title: Text(
-          StringManager.resulTitle,
+          tr("resulTitle"),
           style: Theme.of(context).textTheme.headline5,
         ),
         actions: [
@@ -106,7 +106,7 @@ class SearchResult extends StatelessWidget {
                               children: [
                                 Expanded(
                                   child: Text(
-                                    StringManager.caesarMensHoodie,
+                                    tr("caesarMensHoodie"),
                                     maxLines: 2,
                                     overflow: TextOverflow.ellipsis,
                                     style: TextStyleManager.getMediumTextStyle(
@@ -131,7 +131,7 @@ class SearchResult extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  StringManager.prise + '\$',
+                                  tr("prise") + '\$',
                                   style: TextStyleManager.getRegularTextStyle(
                                     color: ColorManager.seeAllColor,
                                     letterSpacing: 0,

@@ -1,10 +1,10 @@
 import 'package:e_shop/presentation/resources/color_manager.dart';
 import 'package:e_shop/presentation/resources/reusable/Primary_button.dart';
 import 'package:e_shop/presentation/resources/reusable/custom_text_form_filed.dart';
-import 'package:e_shop/presentation/resources/string_manager.dart';
 import 'package:e_shop/presentation/resources/text_style_manager.dart';
 import 'package:e_shop/presentation/resources/value_manager.dart';
 import 'package:e_shop/presentation/views/authentication_view/reset_password_view.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -25,7 +25,9 @@ class ForgetPasswordView extends StatelessWidget {
           textBaseline: TextBaseline.alphabetic,
           children: [
             GestureDetector(
-              onTap: (){Navigator.pop(context);},
+              onTap: () {
+                Navigator.pop(context);
+              },
               child: Icon(
                 Icons.arrow_back,
                 color: ColorManager.primaryFontColor,
@@ -35,14 +37,14 @@ class ForgetPasswordView extends StatelessWidget {
               height: AppSizeManager.s28.h,
             ),
             Text(
-              StringManager.forgetPassword,
+              tr("forgetPassword"),
               style: Theme.of(context).textTheme.headline6,
             ),
             SizedBox(
               height: AppSizeManager.s18.h,
             ),
             Text(
-              StringManager.forgetPasswordSubtitle,
+              tr("forgetPasswordSubtitle"),
               style: TextStyleManager.getMediumTextStyle(
                 color: ColorManager.registerSubtitle,
                 letterSpacing: 0,
@@ -53,10 +55,10 @@ class ForgetPasswordView extends StatelessWidget {
             ),
             Form(
               child: CustomTextFormFiled(
-                validator: (value){},
+                validator: (value) {},
                 keyboardType: TextInputType.emailAddress,
                 icon: Icons.email_outlined,
-                label: StringManager.email,
+                label: tr("email"),
               ),
             ),
             SizedBox(
@@ -64,7 +66,7 @@ class ForgetPasswordView extends StatelessWidget {
             ),
             PrimaryButton(
               width: (AppSizeManager.sWidth - AppSizeManager.s16 * 2).w,
-              buttonTitle: StringManager.sendEmailToChangePassword,
+              buttonTitle: tr("sendEmailToChangePassword"),
               onPress: () {
                 Navigator.push(
                   context,

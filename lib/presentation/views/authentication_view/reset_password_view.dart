@@ -5,6 +5,7 @@ import 'package:e_shop/presentation/resources/reusable/custom_text_form_filed.da
 import 'package:e_shop/presentation/resources/string_manager.dart';
 import 'package:e_shop/presentation/resources/text_style_manager.dart';
 import 'package:e_shop/presentation/resources/value_manager.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -25,7 +26,9 @@ class ResetPasswordView extends StatelessWidget {
           textBaseline: TextBaseline.alphabetic,
           children: [
             GestureDetector(
-              onTap: (){Navigator.pop(context);},
+              onTap: () {
+                Navigator.pop(context);
+              },
               child: Icon(
                 Icons.arrow_back,
                 color: ColorManager.primaryFontColor,
@@ -35,14 +38,14 @@ class ResetPasswordView extends StatelessWidget {
               height: AppSizeManager.s28.h,
             ),
             Text(
-              StringManager.forgetPassword,
+              tr("forgetPassword"),
               style: Theme.of(context).textTheme.headline6,
             ),
             SizedBox(
               height: AppSizeManager.s18.h,
             ),
             Text(
-              StringManager.forgetPasswordSubtitle,
+              tr("forgetPasswordSubtitle"),
               style: TextStyleManager.getMediumTextStyle(
                 color: ColorManager.registerSubtitle,
                 letterSpacing: 0,
@@ -55,9 +58,9 @@ class ResetPasswordView extends StatelessWidget {
               child: Column(
                 children: [
                   CustomTextFormFiled(
-                    label: StringManager.currentPassword,
+                    label: tr("currentPassword"),
                     keyboardType: TextInputType.visiblePassword,
-                    validator: (value){},
+                    validator: (value) {},
                     obscureText: true,
                     suffixIcon: GestureDetector(
                       child: Icon(
@@ -68,9 +71,9 @@ class ResetPasswordView extends StatelessWidget {
                     ),
                   ),
                   CustomTextFormFiled(
-                    label: StringManager.newPassword,
+                    label: tr("newPassword"),
                     keyboardType: TextInputType.visiblePassword,
-                    validator: (value){},
+                    validator: (value) {},
                     obscureText: true,
                     suffixIcon: GestureDetector(
                       child: Icon(
@@ -81,14 +84,12 @@ class ResetPasswordView extends StatelessWidget {
                     ),
                   ),
                   CustomTextFormFiled(
-                    label: StringManager.confirmPassword,
+                    label: tr("confirmPassword"),
                     keyboardType: TextInputType.visiblePassword,
-                    validator: (value){},
+                    validator: (value) {},
                     obscureText: true,
                     suffixIcon: GestureDetector(
-                      onTap: (){
-
-                      },
+                      onTap: () {},
                       child: Icon(
                         Icons.remove_red_eye_outlined,
                         color: ColorManager.accentFontColor,
@@ -104,7 +105,7 @@ class ResetPasswordView extends StatelessWidget {
             ),
             PrimaryButton(
               width: (AppSizeManager.sWidth - AppSizeManager.s16 * 2).w,
-              buttonTitle: StringManager.sendEmailToChangePassword,
+              buttonTitle: tr("sendEmailToChangePassword"),
               onPress: () {},
             ),
           ],

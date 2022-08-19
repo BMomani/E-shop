@@ -6,10 +6,10 @@ import 'package:e_shop/presentation/resources/reusable/Primary_button.dart';
 import 'package:e_shop/presentation/resources/reusable/carosul.dart';
 import 'package:e_shop/presentation/resources/reusable/dot_indicator.dart';
 import 'package:e_shop/presentation/resources/reusable/rate_bar.dart';
-import 'package:e_shop/presentation/resources/string_manager.dart';
 import 'package:e_shop/presentation/resources/text_style_manager.dart';
 import 'package:e_shop/presentation/resources/value_manager.dart';
 import 'package:e_shop/presentation/views/home_view/cart_view.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -29,7 +29,7 @@ class _ProductDetailState extends State<ProductDetail>
   List<Widget> productReviewAndOther = [
     SingleChildScrollView(
       child: Text(
-        StringManager.descriptionContent,
+        tr("descriptionContent"),
         style: TextStyleManager.getRegularTextStyle(
             color: ColorManager.subFontColor.withOpacity(.5),
             fontSize: FontSizeManager.s12.sp),
@@ -37,7 +37,7 @@ class _ProductDetailState extends State<ProductDetail>
     ),
     Center(
       child: Text(
-        StringManager.review,
+        tr("review"),
         style: TextStyleManager.getRegularTextStyle(
             color: ColorManager.subFontColor.withOpacity(.5),
             fontSize: FontSizeManager.s12.sp),
@@ -45,7 +45,7 @@ class _ProductDetailState extends State<ProductDetail>
     ),
     Center(
       child: Text(
-        StringManager.ask,
+        tr("ask"),
         style: TextStyleManager.getRegularTextStyle(
             color: ColorManager.subFontColor.withOpacity(.5),
             fontSize: FontSizeManager.s12.sp),
@@ -56,18 +56,18 @@ class _ProductDetailState extends State<ProductDetail>
   List<DeliveryModel> delivery = [
     DeliveryModel(
         image: ImageManager.truck,
-        title: StringManager.deliveryTitle1,
-        price: StringManager.deliveryPrice1,
-        description: StringManager.deliveryDescription1),
+        title: tr("deliveryTitle1"),
+        price: tr("deliveryPrice1"),
+        description: tr("deliveryDescription1")),
     DeliveryModel(
         image: ImageManager.box,
-        title: StringManager.deliveryTitle2,
-        price: StringManager.deliveryPrice2,
-        description: StringManager.deliveryDescription2),
+        title: tr("deliveryTitle2"),
+        price: tr("deliveryPrice2"),
+        description: tr("deliveryDescription2")),
     DeliveryModel(
         image: ImageManager.back,
-        title: StringManager.deliveryTitle3,
-        description: StringManager.deliveryDescription3),
+        title: tr("deliveryTitle3"),
+        description: tr("deliveryDescription3")),
   ];
 
   @override
@@ -90,7 +90,7 @@ class _ProductDetailState extends State<ProductDetail>
           ),
         ),
         title: Text(
-          StringManager.shirt,
+          tr("shirt"),
           style: Theme.of(context).textTheme.headline5,
         ),
       ),
@@ -112,67 +112,71 @@ class _ProductDetailState extends State<ProductDetail>
                       Carousel(
                         height: 332,
                         items: const [
-                        Image(
-                          image: AssetImage(
+                          Image(
+                            image: AssetImage(
                               ImageManager.pump,
+                            ),
                           ),
-                        ),
-                        Image(
-                          image: AssetImage(
-                            ImageManager.favImg,
+                          Image(
+                            image: AssetImage(
+                              ImageManager.favImg,
+                            ),
                           ),
-                        ),
-                        Image(
-                          image: AssetImage(
+                          Image(
+                            image: AssetImage(
                               ImageManager.pump,
+                            ),
                           ),
-                        ),
-                        Image(
-                          image: AssetImage(
-                            ImageManager.favImg,
+                          Image(
+                            image: AssetImage(
+                              ImageManager.favImg,
+                            ),
                           ),
-                        ),
-                        Image(
-                          image: AssetImage(
+                          Image(
+                            image: AssetImage(
                               ImageManager.pump,
+                            ),
                           ),
-                        ),
-                        ], onChanged: (int index) {
+                        ],
+                        onChanged: (int index) {
                           setState(() {
-                            carouselIndex=index;
+                            carouselIndex = index;
                           });
-                      },
+                        },
                       ),
                       SizedBox(
                         height: AppSizeManager.s20.h,
                         child: Center(
-                          child: DotIndicator(index: carouselIndex, dotsCount:const [
-                            Image(
-                              image: AssetImage(
-                                ImageManager.pump,
+                          child: DotIndicator(
+                            index: carouselIndex,
+                            dotsCount: const [
+                              Image(
+                                image: AssetImage(
+                                  ImageManager.pump,
+                                ),
                               ),
-                            ),
-                            Image(
-                              image: AssetImage(
-                                ImageManager.favImg,
+                              Image(
+                                image: AssetImage(
+                                  ImageManager.favImg,
+                                ),
                               ),
-                            ),
-                            Image(
-                              image: AssetImage(
-                                ImageManager.pump,
+                              Image(
+                                image: AssetImage(
+                                  ImageManager.pump,
+                                ),
                               ),
-                            ),
-                            Image(
-                              image: AssetImage(
-                                ImageManager.favImg,
+                              Image(
+                                image: AssetImage(
+                                  ImageManager.favImg,
+                                ),
                               ),
-                            ),
-                            Image(
-                              image: AssetImage(
-                                ImageManager.pump,
+                              Image(
+                                image: AssetImage(
+                                  ImageManager.pump,
+                                ),
                               ),
-                            ),
-                          ].length,),
+                            ].length,
+                          ),
                         ),
                       ),
                     ],
@@ -180,7 +184,7 @@ class _ProductDetailState extends State<ProductDetail>
                 ),
               ),
               Text(
-                StringManager.shirtDescription,
+                tr("shirtDescription"),
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
                 style: TextStyleManager.getMediumTextStyle(
@@ -200,14 +204,14 @@ class _ProductDetailState extends State<ProductDetail>
                   Column(
                     children: [
                       Text(
-                        StringManager.prise + ' - ' + StringManager.prise2,
+                        tr("prise") + ' - ' + tr("prise2"),
                         style: TextStyleManager.getBoldTextStyle(
                           color: ColorManager.activeSlider,
                           fontSize: FontSizeManager.s16.sp,
                         ),
                       ),
                       Text(
-                        StringManager.prise + ' - ' + StringManager.prise2,
+                        tr("prise") + ' - ' + tr("prise2"),
                         style: TextStyle(
                           fontWeight: FontWeight.w700,
                           color: ColorManager.bottomNavigationTextColor
@@ -217,7 +221,7 @@ class _ProductDetailState extends State<ProductDetail>
                         ),
                       ),
                       Text(
-                        '-' + StringManager.discount + '%',
+                        '-' + tr("discount") + '%',
                         style: TextStyleManager.getMediumTextStyle(
                           color: ColorManager.primaryColor,
                           fontSize: FontSizeManager.s12.sp,
@@ -231,7 +235,7 @@ class _ProductDetailState extends State<ProductDetail>
                 height: AppSizeManager.s10.h,
               ),
               Text(
-                StringManager.color,
+                tr("color"),
                 style: TextStyleManager.getBoldTextStyle(
                   color: ColorManager.cartColors.withOpacity(.5),
                   fontSize: FontSizeManager.s10.sp,
@@ -262,7 +266,7 @@ class _ProductDetailState extends State<ProductDetail>
                 height: AppSizeManager.s10.h,
               ),
               Text(
-                StringManager.size,
+                tr("size"),
                 style: TextStyleManager.getBoldTextStyle(
                   color: ColorManager.cartColors.withOpacity(.5),
                   fontSize: FontSizeManager.s10.sp,
@@ -275,7 +279,7 @@ class _ProductDetailState extends State<ProductDetail>
                 height: AppSizeManager.s20.h,
                 child: ListView.separated(
                   scrollDirection: Axis.horizontal,
-                  itemCount: StringManager.cartSizes.length,
+                  itemCount: tr("cartSizes").length,
                   itemBuilder: (BuildContext context, int index) {
                     return CircleAvatar(
                       backgroundColor:
@@ -285,7 +289,7 @@ class _ProductDetailState extends State<ProductDetail>
                         backgroundColor: ColorManager.white,
                         radius: AppSizeManager.s11.w,
                         child: Text(
-                          StringManager.cartSizes[index],
+                          tr("cartSizes")[index],
                           style: TextStyleManager.getBoldTextStyle(
                             color: ColorManager.subFontColor.withOpacity(.6),
                             fontSize: FontSizeManager.s10.sp,
@@ -308,7 +312,7 @@ class _ProductDetailState extends State<ProductDetail>
                 controller: controller,
                 tabs: [
                   Text(
-                    StringManager.description,
+                    tr("description"),
                     overflow: TextOverflow.ellipsis,
                     style: TextStyleManager.getMediumTextStyle(
                       color: ColorManager.subFontColor,
@@ -316,7 +320,7 @@ class _ProductDetailState extends State<ProductDetail>
                     ),
                   ),
                   Text(
-                    StringManager.review,
+                    tr("review"),
                     overflow: TextOverflow.ellipsis,
                     style: TextStyleManager.getMediumTextStyle(
                       color: ColorManager.subFontColor,
@@ -324,7 +328,7 @@ class _ProductDetailState extends State<ProductDetail>
                     ),
                   ),
                   Text(
-                    StringManager.ask,
+                    tr("ask"),
                     overflow: TextOverflow.ellipsis,
                     style: TextStyleManager.getMediumTextStyle(
                       color: ColorManager.subFontColor,
@@ -384,11 +388,12 @@ class _ProductDetailState extends State<ProductDetail>
                                 delivery[index].price != null
                                     ? Text(
                                         delivery[index].price!,
-                                        style:
-                                            TextStyleManager.getRegularTextStyle(
+                                        style: TextStyleManager
+                                            .getRegularTextStyle(
                                                 color: ColorManager.subFontColor
                                                     .withOpacity(.5),
-                                                fontSize: FontSizeManager.s10.sp),
+                                                fontSize:
+                                                    FontSizeManager.s10.sp),
                                       )
                                     : const SizedBox(
                                         height: 0.1,
@@ -426,9 +431,14 @@ class _ProductDetailState extends State<ProductDetail>
                 children: [
                   PrimaryButton(
                     width: AppSizeManager.s290.w,
-                    buttonTitle: StringManager.addToCartButtonTitle,
+                    buttonTitle: tr("addToCartButtonTitle"),
                     onPress: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>const CartView(),),);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const CartView(),
+                        ),
+                      );
                     },
                     buttonTitleWidget: SvgPicture.asset(
                       ImageManager.cart,

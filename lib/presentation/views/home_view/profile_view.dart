@@ -5,6 +5,7 @@ import 'package:e_shop/presentation/resources/string_manager.dart';
 import 'package:e_shop/presentation/resources/text_style_manager.dart';
 import 'package:e_shop/presentation/resources/value_manager.dart';
 import 'package:e_shop/presentation/view_model/home_view_model.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
@@ -18,10 +19,9 @@ class ProfileView extends StatelessWidget {
       appBar: AppBar(
         leading: GestureDetector(
           onTap: () {
-            if(context.read<HomeViewModel>().active==4){
+            if (context.read<HomeViewModel>().active == 4) {
               context.read<HomeViewModel>().bottomNavigationChangeActiveItem(0);
-            }
-            else{
+            } else {
               Navigator.pop(context);
             }
           },
@@ -31,7 +31,7 @@ class ProfileView extends StatelessWidget {
           ),
         ),
         title: Text(
-          StringManager.navigationBarProfile,
+          tr("navigationBarProfile"),
           style: Theme.of(context).textTheme.headline5,
         ),
         actions: [
@@ -43,7 +43,7 @@ class ProfileView extends StatelessWidget {
             child: GestureDetector(
               onTap: () {},
               child: Text(
-                StringManager.edit,
+                tr("edit"),
                 style: TextStyleManager.getMediumTextStyle(
                   color: ColorManager.primaryFontColor.withOpacity(.5),
                   fontSize: FontSizeManager.s12.sp,
@@ -67,7 +67,7 @@ class ProfileView extends StatelessWidget {
                 height: AppSizeManager.s20.h,
               ),
               Text(
-                StringManager.name,
+                tr("name"),
                 style: TextStyleManager.getBoldTextStyle(
                   color: ColorManager.primaryColor,
                   fontSize: FontSizeManager.s18.sp,
@@ -87,7 +87,7 @@ class ProfileView extends StatelessWidget {
                       textBaseline: TextBaseline.alphabetic,
                       children: [
                         Text(
-                          StringManager.emailName,
+                          tr("emailName"),
                           style: TextStyleManager.getMediumTextStyle(
                               color: ColorManager.subFontColor,
                               fontSize: FontSizeManager.s14.sp),
@@ -96,15 +96,16 @@ class ProfileView extends StatelessWidget {
                           height: AppSizeManager.s10.h,
                         ),
                         Text(
-                          StringManager.emailAddress,
+                          tr("emailAddress"),
                           style: TextStyleManager.getRegularTextStyle(
                               color: ColorManager.subFontColor.withOpacity(.6),
                               fontSize: FontSizeManager.s10.sp),
                         ),
                         SizedBox(
                           height: AppSizeManager.s20.h,
-                        ),Text(
-                          StringManager.address,
+                        ),
+                        Text(
+                          tr("address"),
                           style: TextStyleManager.getMediumTextStyle(
                               color: ColorManager.subFontColor,
                               fontSize: FontSizeManager.s14.sp),
@@ -113,15 +114,16 @@ class ProfileView extends StatelessWidget {
                           height: AppSizeManager.s10.h,
                         ),
                         Text(
-                          StringManager.addressContent,
+                          tr("addressContent"),
                           style: TextStyleManager.getRegularTextStyle(
                               color: ColorManager.subFontColor.withOpacity(.6),
                               fontSize: FontSizeManager.s10.sp),
                         ),
                         SizedBox(
                           height: AppSizeManager.s20.h,
-                        ),Text(
-                          StringManager.phoneNumber,
+                        ),
+                        Text(
+                          tr("phoneNumber"),
                           style: TextStyleManager.getMediumTextStyle(
                               color: ColorManager.subFontColor,
                               fontSize: FontSizeManager.s14.sp),
@@ -130,7 +132,7 @@ class ProfileView extends StatelessWidget {
                           height: AppSizeManager.s10.h,
                         ),
                         Text(
-                          StringManager.myPhoneNumber,
+                          tr("myPhoneNumber"),
                           style: TextStyleManager.getRegularTextStyle(
                               color: ColorManager.subFontColor.withOpacity(.6),
                               fontSize: FontSizeManager.s10.sp),

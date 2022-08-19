@@ -3,6 +3,7 @@ import 'package:e_shop/presentation/resources/color_manager.dart';
 import 'package:e_shop/presentation/resources/font_manager.dart';
 import 'package:e_shop/presentation/resources/string_manager.dart';
 import 'package:e_shop/presentation/resources/text_style_manager.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class SearchFilterViewModel with ChangeNotifier {
@@ -12,35 +13,34 @@ class SearchFilterViewModel with ChangeNotifier {
   List<Widget> _sizesFilterChips = [];
   final List<FilterChipModel> _sortedByFilterModel = [];
   List<Widget> _sortedByFilterChips = [];
-  int _sliderValue=100;
-  int get sliderValue =>_sliderValue;
-  RangeValues _sliderRangeValues=const RangeValues(100,500);
-  RangeValues get sliderRangeValues =>_sliderRangeValues;
+  int _sliderValue = 100;
+  int get sliderValue => _sliderValue;
+  RangeValues _sliderRangeValues = const RangeValues(100, 500);
+  RangeValues get sliderRangeValues => _sliderRangeValues;
   rateCheck? filterRate;
   SearchFilterViewModel() {
-    for (int i = 0; i < StringManager.categoryFilter.length; i++) {
+    for (int i = 0; i < tr("categoryFilter").length; i++) {
       _categoryFilterModel.add(
-        FilterChipModel(StringManager.categoryFilter[i], false),
+        FilterChipModel(tr("categoryFilter")[i], false),
       );
     }
-    for (int i = 0; i < StringManager.sizeFilter.length; i++) {
+    for (int i = 0; i < tr("sizeFilter").length; i++) {
       _sizesFilterModel.add(
-        FilterChipModel(StringManager.sizeFilter[i], false),
+        FilterChipModel(tr("sizeFilter")[i], false),
       );
     }
-    for (int i = 0; i < StringManager.sortedBy.length; i++) {
+    for (int i = 0; i < tr("sortedBy").length; i++) {
       _sortedByFilterModel.add(
-        FilterChipModel(StringManager.categoryFilter[i], false),
+        FilterChipModel(tr("categoryFilter")[i], false),
       );
     }
   }
-  List<Widget> categoryChips()
-  {
-    _categoryFilterChips=[];
+  List<Widget> categoryChips() {
+    _categoryFilterChips = [];
     for (int i = 0; i < _categoryFilterModel.length; i++) {
       Widget item = FilterChip(
         selectedColor: ColorManager.primaryColor,
-        selected:_categoryFilterModel[i].isSelected ,
+        selected: _categoryFilterModel[i].isSelected,
         side: BorderSide(
           width: 0.5,
           color: ColorManager.filterBorder,
@@ -49,29 +49,28 @@ class SearchFilterViewModel with ChangeNotifier {
         label: Text(
           _categoryFilterModel[i].filterName,
           style: TextStyleManager.getMediumTextStyle(
-            color: _categoryFilterModel[i].isSelected? ColorManager.white: ColorManager.bottomNavigationTextColor,
+            color: _categoryFilterModel[i].isSelected
+                ? ColorManager.white
+                : ColorManager.bottomNavigationTextColor,
             fontSize: FontSizeManager.s10,
           ),
         ),
         onSelected: (bool value) {
-          _categoryFilterModel[i].isSelected=value;
+          _categoryFilterModel[i].isSelected = value;
           notifyListeners();
         },
       );
-      _categoryFilterChips.add(
-        item
-      );
+      _categoryFilterChips.add(item);
     }
     return _categoryFilterChips;
   }
 
-  List<Widget> sizesChips()
-  {
-    _sizesFilterChips=[];
+  List<Widget> sizesChips() {
+    _sizesFilterChips = [];
     for (int i = 0; i < _sizesFilterModel.length; i++) {
       Widget item = FilterChip(
         selectedColor: ColorManager.primaryColor,
-        selected:_sizesFilterModel[i].isSelected ,
+        selected: _sizesFilterModel[i].isSelected,
         side: BorderSide(
           width: 0.5,
           color: ColorManager.filterBorder,
@@ -80,29 +79,28 @@ class SearchFilterViewModel with ChangeNotifier {
         label: Text(
           _sizesFilterModel[i].filterName,
           style: TextStyleManager.getMediumTextStyle(
-            color: _sizesFilterModel[i].isSelected? ColorManager.white: ColorManager.bottomNavigationTextColor,
+            color: _sizesFilterModel[i].isSelected
+                ? ColorManager.white
+                : ColorManager.bottomNavigationTextColor,
             fontSize: FontSizeManager.s10,
           ),
         ),
         onSelected: (bool value) {
-          _sizesFilterModel[i].isSelected=value;
+          _sizesFilterModel[i].isSelected = value;
           notifyListeners();
         },
       );
-      _sizesFilterChips.add(
-        item
-      );
+      _sizesFilterChips.add(item);
     }
     return _sizesFilterChips;
   }
 
-  List<Widget> sortedByChips()
-  {
-    _sortedByFilterChips=[];
+  List<Widget> sortedByChips() {
+    _sortedByFilterChips = [];
     for (int i = 0; i < _sortedByFilterModel.length; i++) {
       Widget item = FilterChip(
         selectedColor: ColorManager.primaryColor,
-        selected:_sortedByFilterModel[i].isSelected ,
+        selected: _sortedByFilterModel[i].isSelected,
         side: BorderSide(
           width: 0.5,
           color: ColorManager.filterBorder,
@@ -111,38 +109,41 @@ class SearchFilterViewModel with ChangeNotifier {
         label: Text(
           _sortedByFilterModel[i].filterName,
           style: TextStyleManager.getMediumTextStyle(
-            color: _sortedByFilterModel[i].isSelected? ColorManager.white: ColorManager.bottomNavigationTextColor,
+            color: _sortedByFilterModel[i].isSelected
+                ? ColorManager.white
+                : ColorManager.bottomNavigationTextColor,
             fontSize: FontSizeManager.s10,
           ),
         ),
         onSelected: (bool value) {
-          _sortedByFilterModel[i].isSelected=value;
+          _sortedByFilterModel[i].isSelected = value;
           notifyListeners();
         },
       );
-      _sortedByFilterChips.add(
-        item
-      );
+      _sortedByFilterChips.add(item);
     }
     return _sortedByFilterChips;
   }
-  void changeSlider(int value)
-  {
-    _sliderValue=value;
+
+  void changeSlider(int value) {
+    _sliderValue = value;
     notifyListeners();
   }
-  void changeSliderRangeValues(RangeValues value)
-  {
-    _sliderRangeValues=value;
+
+  void changeSliderRangeValues(RangeValues value) {
+    _sliderRangeValues = value;
     notifyListeners();
   }
-  void checkRateValue(rateCheck rate)
-  {
+
+  void checkRateValue(rateCheck rate) {
     filterRate = rate;
     notifyListeners();
   }
 }
 
-enum rateCheck{
-  five,four,there,two,
+enum rateCheck {
+  five,
+  four,
+  there,
+  two,
 }

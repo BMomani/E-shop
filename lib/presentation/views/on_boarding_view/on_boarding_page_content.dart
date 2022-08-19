@@ -16,18 +16,26 @@ class OnBoardingPageContent extends StatelessWidget {
     return Column(
       children: [
         SvgPicture.asset(image),
-        SizedBox(height: AppSizeManager.s28.h,),
+        SizedBox(
+          height: AppSizeManager.s28.h,
+        ),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: (AppPaddingManager.p54-AppPaddingManager.p16).w,),
+          padding: EdgeInsets.symmetric(
+            horizontal: (AppPaddingManager.p54 - AppPaddingManager.p16).w,
+          ),
           child: Text(
             title,
             style: Theme.of(context).textTheme.headline6,
             textAlign: TextAlign.center,
           ),
         ),
-        SizedBox(height: AppSizeManager.s24.h,),
+        SizedBox(
+          height: AppSizeManager.s24.h,
+        ),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: (AppPaddingManager.p76-AppPaddingManager.p16).w,),
+          padding: EdgeInsets.symmetric(
+            horizontal: (AppPaddingManager.p76 - AppPaddingManager.p16).w,
+          ),
           child: Text(
             subtitle,
             style: Theme.of(context).textTheme.bodyText2,

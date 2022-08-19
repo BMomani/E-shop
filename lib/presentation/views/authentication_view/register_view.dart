@@ -9,6 +9,7 @@ import 'package:e_shop/presentation/resources/string_manager.dart';
 import 'package:e_shop/presentation/resources/text_style_manager.dart';
 import 'package:e_shop/presentation/resources/value_manager.dart';
 import 'package:e_shop/presentation/views/authentication_view/login_view.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -30,14 +31,14 @@ class RegisterView extends StatelessWidget {
             textBaseline: TextBaseline.alphabetic,
             children: [
               Text(
-                StringManager.signUpButton,
+                tr("signUpButton"),
                 style: Theme.of(context).textTheme.headline6,
               ),
               SizedBox(
                 height: AppSizeManager.s11.h,
               ),
               Text(
-                StringManager.signUpSubtitle,
+                tr("signUpSubtitle"),
                 style: TextStyleManager.getMediumTextStyle(
                   color: ColorManager.registerSubtitle,
                   letterSpacing: 0,
@@ -55,26 +56,26 @@ class RegisterView extends StatelessWidget {
                       validator: (value) {},
                       keyboardType: TextInputType.text,
                       icon: Icons.account_circle_outlined,
-                      label: StringManager.userName,
+                      label: tr("userName"),
                     ),
                     CustomTextFormFiled(
                       validator: (value) {},
                       keyboardType: TextInputType.emailAddress,
                       icon: Icons.email_outlined,
-                      label: StringManager.email,
+                      label: tr("email"),
                     ),
                     CustomTextFormFiled(
                       keyboardType: TextInputType.phone,
                       validator: (value) {},
                       icon: Icons.phone,
-                      label: StringManager.phone,
+                      label: tr("phone"),
                     ),
                     CustomTextFormFiled(
                       validator: (value) {},
                       keyboardType: TextInputType.visiblePassword,
                       obscureText: true,
                       icon: Icons.lock_outline_rounded,
-                      label: StringManager.password,
+                      label: tr("password"),
                     ),
                   ],
                 ),
@@ -84,18 +85,18 @@ class RegisterView extends StatelessWidget {
               ),
               PrimaryButton(
                 width: (AppSizeManager.sWidth - AppSizeManager.s16 * 2).w,
-                buttonTitle: StringManager.signUpButton,
+                buttonTitle: tr("signUpButton"),
                 onPress: () {},
               ),
               SizedBox(
                 height: AppSizeManager.s28.h,
               ),
-              const SignDivider(text: StringManager.orSignUpWith),
+              SignDivider(text: tr("orSignUpWith")),
               SizedBox(
                 height: AppSizeManager.s28.h,
               ),
               SocialButton(
-                text: StringManager.google,
+                text: tr("google"),
                 icon: SvgPicture.asset(
                   ImageManager.google,
                   width: AppSizeManager.s18.w,
@@ -111,7 +112,7 @@ class RegisterView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   SocialButton(
-                    text: StringManager.facebook,
+                    text: tr("facebook"),
                     icon: SvgPicture.asset(
                       ImageManager.facebook,
                       width: AppSizeManager.s18.w,
@@ -121,7 +122,7 @@ class RegisterView extends StatelessWidget {
                     width: AppSizeManager.s170.w,
                   ),
                   SocialButton(
-                    text: StringManager.apple,
+                    text: tr("apple"),
                     width: AppSizeManager.s170.w,
                     icon: SvgPicture.asset(
                       ImageManager.apple,
@@ -140,7 +141,7 @@ class RegisterView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    StringManager.alreadyHaveAccount,
+                    tr("alreadyHaveAccount"),
                     style: TextStyleManager.getMediumTextStyle(
                         fontSize: 12,
                         letterSpacing: 0,
@@ -159,7 +160,7 @@ class RegisterView extends StatelessWidget {
                       );
                     },
                     child: Text(
-                      StringManager.signInButton,
+                      tr("signInButton"),
                       style: TextStyleManager.getMediumTextStyle(
                           fontSize: 12,
                           letterSpacing: 0,

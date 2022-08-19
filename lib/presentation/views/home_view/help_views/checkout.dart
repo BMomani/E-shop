@@ -4,10 +4,10 @@ import 'package:e_shop/presentation/resources/color_manager.dart';
 import 'package:e_shop/presentation/resources/font_manager.dart';
 import 'package:e_shop/presentation/resources/reusable/Primary_button.dart';
 import 'package:e_shop/presentation/resources/reusable/animation_route.dart';
-import 'package:e_shop/presentation/resources/string_manager.dart';
 import 'package:e_shop/presentation/resources/text_style_manager.dart';
 import 'package:e_shop/presentation/resources/value_manager.dart';
 import 'package:e_shop/presentation/views/home_view/help_views/side_menu.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -31,24 +31,24 @@ class Checkout extends StatelessWidget {
   ];
   final List<DeliveryAddressCheckModel> deliveryAddress = [
     DeliveryAddressCheckModel(
-      title: StringManager.home,
-      address: StringManager.homeAddress,
-      phone: StringManager.myPhoneNumber,
+      title: tr("home"),
+      address: tr("homeAddress"),
+      phone: tr("myPhoneNumber"),
     ),
     DeliveryAddressCheckModel(
-      title: StringManager.office,
-      address: StringManager.officeAddress,
-      phone: StringManager.myPhoneNumber,
+      title: tr("office"),
+      address: tr("officeAddress"),
+      phone: tr("myPhoneNumber"),
     ),
   ];
   List<Map<String, dynamic>> expansion = List.generate(
       4,
       (index) => {
             'id': index,
-            'title': StringManager.paymentMethods[index],
+            'title': tr("paymentMethods")[index],
             'image': ImageManager.payment[index],
             'isExpanded': false,
-            'content': StringManager.paymentMethods[index],
+            'content': tr("paymentMethods")[index],
           });
   DeliveryAddressCheckModel? deliveryAddressValue;
   @override
@@ -66,7 +66,7 @@ class Checkout extends StatelessWidget {
           ),
         ),
         title: Text(
-          StringManager.checkout,
+          tr("checkout"),
           style: Theme.of(context).textTheme.headline5,
         ),
         actions: [
@@ -100,7 +100,7 @@ class Checkout extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    StringManager.shoppingTo,
+                    tr("shoppingTo"),
                     style: TextStyleManager.getMediumTextStyle(
                       color: ColorManager.subFontColor,
                       fontSize: FontSizeManager.s16.sp,
@@ -116,7 +116,7 @@ class Checkout extends StatelessWidget {
                       );*/
                     },
                     child: Text(
-                      StringManager.addPlace,
+                      tr("addPlace"),
                       style: TextStyleManager.getRegularTextStyle(
                         color: ColorManager.seeAllColor,
                         letterSpacing: 0,
@@ -177,7 +177,7 @@ class Checkout extends StatelessWidget {
                                 Row(
                                   children: [
                                     Text(
-                                      StringManager.mobile,
+                                      tr("mobile"),
                                       style: TextStyleManager.getBoldTextStyle(
                                           color: ColorManager.subFontColor,
                                           fontSize: FontSizeManager.s10.sp),
@@ -215,7 +215,7 @@ class Checkout extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    StringManager.deliveryDate,
+                    tr("deliveryDate"),
                     style: TextStyleManager.getMediumTextStyle(
                       color: ColorManager.subFontColor,
                       fontSize: FontSizeManager.s16.sp,
@@ -259,7 +259,7 @@ class Checkout extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    StringManager.payment,
+                    tr("payment"),
                     style: TextStyleManager.getMediumTextStyle(
                       color: ColorManager.subFontColor,
                       fontSize: FontSizeManager.s16.sp,
@@ -275,7 +275,7 @@ class Checkout extends StatelessWidget {
                       );*/
                     },
                     child: Text(
-                      StringManager.addNew,
+                      tr("addNew"),
                       style: TextStyleManager.getRegularTextStyle(
                         color: ColorManager.seeAllColor,
                         fontSize: 12,
@@ -322,9 +322,7 @@ class Checkout extends StatelessWidget {
                             ),
                           )
                           .toList(),
-                      expansionCallback: (int index,bool isExpanded){
-
-                      },
+                      expansionCallback: (int index, bool isExpanded) {},
                     ),
                   ),
                 ),
@@ -338,7 +336,7 @@ class Checkout extends StatelessWidget {
                   Column(
                     children: [
                       Text(
-                        StringManager.tot,
+                        tr("tot"),
                         style: TextStyleManager.getMediumTextStyle(
                             color: ColorManager.subFontColor.withOpacity(
                               .5,
@@ -346,7 +344,7 @@ class Checkout extends StatelessWidget {
                             fontSize: FontSizeManager.s12),
                       ),
                       Text(
-                        StringManager.totalPrice,
+                        tr("totalPrice"),
                         style: TextStyleManager.getMediumTextStyle(
                           color: ColorManager.primaryColor,
                           fontSize: FontSizeManager.s14.sp,
@@ -357,7 +355,7 @@ class Checkout extends StatelessWidget {
                   PrimaryButton(
                     width: AppSizeManager.s320.w,
                     onPress: () {},
-                    buttonTitle: StringManager.cont,
+                    buttonTitle: tr("cont"),
                   ),
                 ],
               ),

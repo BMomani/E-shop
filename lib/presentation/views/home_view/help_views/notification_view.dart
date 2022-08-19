@@ -3,11 +3,11 @@ import 'package:e_shop/presentation/resources/asset_manager.dart';
 import 'package:e_shop/presentation/resources/color_manager.dart';
 import 'package:e_shop/presentation/resources/font_manager.dart';
 import 'package:e_shop/presentation/resources/reusable/animation_route.dart';
-import 'package:e_shop/presentation/resources/string_manager.dart';
 import 'package:e_shop/presentation/resources/text_style_manager.dart';
 import 'package:e_shop/presentation/resources/value_manager.dart';
 import 'package:e_shop/presentation/view_model/home_view_model.dart';
 import 'package:e_shop/presentation/views/home_view/help_views/side_menu.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -39,19 +39,29 @@ class NotificationView extends StatelessWidget {
                     height: AppSizeManager.s40.h,
                     width: AppSizeManager.s40.w,
                   ),
-                  SizedBox(width: AppSizeManager.s10.w,),
+                  SizedBox(
+                    width: AppSizeManager.s10.w,
+                  ),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(title,style: TextStyleManager.getBoldTextStyle(
-                          color: ColorManager.subFontColor,
-                          fontSize: FontSizeManager.s14.sp,
-                        ),),
-                        SizedBox(height: AppSizeManager.s10.h,),
-                        Text(content,
+                        Text(
+                          title,
+                          style: TextStyleManager.getBoldTextStyle(
+                            color: ColorManager.subFontColor,
+                            fontSize: FontSizeManager.s14.sp,
+                          ),
+                        ),
+                        SizedBox(
+                          height: AppSizeManager.s10.h,
+                        ),
+                        Text(
+                          content,
                           style: TextStyleManager.getRegularTextStyle(
-                            color: ColorManager.subFontColor.withOpacity(.5,),
+                            color: ColorManager.subFontColor.withOpacity(
+                              .5,
+                            ),
                             fontSize: FontSizeManager.s10.sp,
                           ),
                         ),
@@ -91,14 +101,16 @@ class NotificationView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: GestureDetector(
-          onTap: (){Navigator.pop(context);},
+          onTap: () {
+            Navigator.pop(context);
+          },
           child: Icon(
             Icons.arrow_back,
             color: ColorManager.notificationColor,
           ),
         ),
         title: Text(
-          StringManager.notification,
+          tr("notification"),
           style: Theme.of(context).textTheme.headline5,
         ),
         actions: [
@@ -107,7 +119,7 @@ class NotificationView extends StatelessWidget {
               Navigator.of(context).push(
                 AnimationRoute(
                   pageBuilder: (context, animation1, animation2) =>
-                  const SideMenu(),
+                      const SideMenu(),
                 ),
               );
             },

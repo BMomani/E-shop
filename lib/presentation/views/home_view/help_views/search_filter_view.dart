@@ -1,10 +1,10 @@
 import 'package:e_shop/presentation/resources/color_manager.dart';
 import 'package:e_shop/presentation/resources/font_manager.dart';
 import 'package:e_shop/presentation/resources/reusable/rate_bar.dart';
-import 'package:e_shop/presentation/resources/string_manager.dart';
 import 'package:e_shop/presentation/resources/text_style_manager.dart';
 import 'package:e_shop/presentation/resources/value_manager.dart';
 import 'package:e_shop/presentation/view_model/search_filter_view_model.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
@@ -17,7 +17,7 @@ class FilterView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: GestureDetector(
-          onTap: (){
+          onTap: () {
             Navigator.pop(context);
           },
           child: Icon(
@@ -26,7 +26,7 @@ class FilterView extends StatelessWidget {
           ),
         ),
         title: Text(
-          StringManager.filter,
+          tr("filter"),
           style: Theme.of(context).textTheme.headline5,
         ),
         actions: [
@@ -38,7 +38,7 @@ class FilterView extends StatelessWidget {
             child: GestureDetector(
               onTap: () {},
               child: Text(
-                StringManager.reset,
+                tr("reset"),
                 style: TextStyleManager.getMediumTextStyle(
                   color: ColorManager.primaryFontColor.withOpacity(.5),
                   fontSize: FontSizeManager.s12.sp,
@@ -57,7 +57,7 @@ class FilterView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                StringManager.category,
+                tr("category"),
                 style: TextStyleManager.getMediumTextStyle(
                   color: ColorManager.subFontColor,
                   fontSize: FontSizeManager.s16.sp,
@@ -75,7 +75,7 @@ class FilterView extends StatelessWidget {
                 height: AppSizeManager.s40.h,
               ),
               Text(
-                StringManager.filterPrice,
+                tr("filterPrice"),
                 style: TextStyleManager.getMediumTextStyle(
                   color: ColorManager.subFontColor,
                   fontSize: FontSizeManager.s16.sp,
@@ -83,7 +83,8 @@ class FilterView extends StatelessWidget {
               ),
               SizedBox(
                 height: AppSizeManager.s40.h,
-                child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       '1\$',
@@ -135,7 +136,7 @@ class FilterView extends StatelessWidget {
                 height: AppSizeManager.s20.h,
               ),
               Text(
-                StringManager.sizes,
+                tr("sizes"),
                 style: TextStyleManager.getMediumTextStyle(
                   color: ColorManager.subFontColor,
                   fontSize: FontSizeManager.s16.sp,
@@ -151,9 +152,8 @@ class FilterView extends StatelessWidget {
               SizedBox(
                 height: AppSizeManager.s40.h,
               ),
-
               Text(
-                StringManager.sortBy,
+                tr("sortBy"),
                 style: TextStyleManager.getMediumTextStyle(
                   color: ColorManager.subFontColor,
                   fontSize: FontSizeManager.s16.sp,
@@ -171,7 +171,7 @@ class FilterView extends StatelessWidget {
                 height: AppSizeManager.s40.h,
               ),
               Text(
-                StringManager.filterRate,
+                tr("filterRate"),
                 style: TextStyleManager.getMediumTextStyle(
                   color: ColorManager.subFontColor,
                   fontSize: FontSizeManager.s16.sp,

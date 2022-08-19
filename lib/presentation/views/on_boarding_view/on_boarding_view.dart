@@ -1,16 +1,17 @@
 import 'package:e_shop/presentation/resources/color_manager.dart';
 import 'package:e_shop/presentation/resources/reusable/Primary_button.dart';
 import 'package:e_shop/presentation/resources/reusable/dot_indicator.dart';
-import 'package:e_shop/presentation/resources/string_manager.dart';
 import 'package:e_shop/presentation/resources/text_style_manager.dart';
 import 'package:e_shop/presentation/resources/value_manager.dart';
 import 'package:e_shop/presentation/view_model/on_boarding_view_model.dart';
 import 'package:e_shop/presentation/views/authentication_view/login_view.dart';
 import 'package:e_shop/presentation/views/authentication_view/register_view.dart';
 import 'package:e_shop/presentation/views/home_view/bottom_navigation_view.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+
 class OnBoardingView extends StatelessWidget {
   const OnBoardingView({Key? key}) : super(key: key);
 
@@ -25,9 +26,11 @@ class OnBoardingView extends StatelessWidget {
             top: AppPaddingManager.p40,
           ),
           child: PageView.builder(
-            itemCount: context.watch<OnBoardingViewModel>().onBoardingPages.length,
+            itemCount:
+                context.watch<OnBoardingViewModel>().onBoardingPages.length,
             controller: context.watch<OnBoardingViewModel>().controller,
-            itemBuilder: (context, index) => context.read<OnBoardingViewModel>().onBoardingPages[index],
+            itemBuilder: (context, index) =>
+                context.read<OnBoardingViewModel>().onBoardingPages[index],
             onPageChanged: (index) {
               context.read<OnBoardingViewModel>().activePageChange(index);
             },
@@ -46,14 +49,16 @@ class OnBoardingView extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              DotIndicator(index: context.watch<OnBoardingViewModel>().activePage, dotsCount: 3),
+              DotIndicator(
+                  index: context.watch<OnBoardingViewModel>().activePage,
+                  dotsCount: 3),
               //////////////
               context.watch<OnBoardingViewModel>().activePage != 2
                   ? Expanded(
                       child: Center(
                         child: PrimaryButton(
                           width: AppSizeManager.s170.w,
-                          buttonTitle: StringManager.nextButton,
+                          buttonTitle: tr("nextButton"),
                           onPress: () {
                             context.read<OnBoardingViewModel>().nextPage();
                           },
@@ -72,12 +77,13 @@ class OnBoardingView extends StatelessWidget {
                             children: [
                               PrimaryButton(
                                 width: AppSizeManager.s170.w,
-                                buttonTitle: StringManager.getStartedButton,
+                                buttonTitle: tr("getStartedButton"),
                                 onPress: () {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => const BottomNavigationView(),
+                                      builder: (context) =>
+                                          const BottomNavigationView(),
                                     ),
                                   );
                                 },
@@ -92,7 +98,7 @@ class OnBoardingView extends StatelessWidget {
                                   );
                                 },
                                 child: Text(
-                                  StringManager.signInButton,
+                                  tr("signInButton"),
                                   style: TextStyleManager.getBoldTextStyle(
                                     fontSize: 14,
                                     letterSpacing: 1.25,
@@ -131,11 +137,12 @@ class OnBoardingView extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                StringManager.notHaveAccountButton,
+                                tr("notHaveAccountButton"),
                                 style: TextStyleManager.getMediumTextStyle(
-                                    fontSize: 12,
-                                    letterSpacing: 0,
-                                    color: ColorManager.haveAccountTextColor,),
+                                  fontSize: 12,
+                                  letterSpacing: 0,
+                                  color: ColorManager.haveAccountTextColor,
+                                ),
                               ),
                               SizedBox(
                                 width: AppSizeManager.s10.w,
@@ -151,7 +158,7 @@ class OnBoardingView extends StatelessWidget {
                                   );
                                 },
                                 child: Text(
-                                  StringManager.signUpButton,
+                                  tr("signUpButton"),
                                   style: TextStyleManager.getMediumTextStyle(
                                       fontSize: 12,
                                       letterSpacing: 0,

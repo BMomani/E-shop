@@ -2,12 +2,12 @@ import 'package:e_shop/presentation/resources/asset_manager.dart';
 import 'package:e_shop/presentation/resources/color_manager.dart';
 import 'package:e_shop/presentation/resources/font_manager.dart';
 import 'package:e_shop/presentation/resources/reusable/rate_bar.dart';
-import 'package:e_shop/presentation/resources/string_manager.dart';
 import 'package:e_shop/presentation/resources/text_style_manager.dart';
 import 'package:e_shop/presentation/resources/value_manager.dart';
 import 'package:e_shop/presentation/views/home_view/help_views/search_filter_view.dart';
 import 'package:e_shop/presentation/views/home_view/help_views/search_result.dart';
 import 'package:e_shop/presentation/views/home_view/help_views/trendy_view.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -39,8 +39,13 @@ class SearchView extends StatelessWidget {
           ),
           child: TextFormField(
             textInputAction: TextInputAction.search,
-            onFieldSubmitted:(value){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>const SearchResult(),),);
+            onFieldSubmitted: (value) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const SearchResult(),
+                ),
+              );
             },
             cursorColor: ColorManager.textButtonColor.withOpacity(.9),
             decoration: InputDecoration(
@@ -63,7 +68,7 @@ class SearchView extends StatelessWidget {
                 letterSpacing: 0,
                 fontSize: FontSizeManager.s18.sp,
               ),
-              hintText: StringManager.searchProduct,
+              hintText: tr("searchProduct"),
               focusedBorder: InputBorder.none,
             ),
           ),
@@ -105,7 +110,7 @@ class SearchView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                StringManager.reset,
+                tr("reset"),
                 style: TextStyleManager.getMediumTextStyle(
                   color: ColorManager.subFontColor,
                   fontSize: FontSizeManager.s16.sp,
@@ -124,16 +129,23 @@ class SearchView extends StatelessWidget {
                       child: Row(
                         children: [
                           SvgPicture.asset(ImageManager.clock),
-                          SizedBox(width: AppSizeManager.s20.w,),
-                          Text(StringManager.recentSearch[index],style: TextStyleManager.getMediumTextStyle(color: ColorManager.recentSearchColor,fontSize: FontSizeManager.s12.sp,),),
+                          SizedBox(
+                            width: AppSizeManager.s20.w,
+                          ),
+                          Text(
+                            tr("recentSearch")[index],
+                            style: TextStyleManager.getMediumTextStyle(
+                              color: ColorManager.recentSearchColor,
+                              fontSize: FontSizeManager.s12.sp,
+                            ),
+                          ),
                           const Spacer(),
                           SvgPicture.asset(ImageManager.close),
-
                         ],
                       ),
                     );
                   },
-                  itemCount: StringManager.recentSearch.length,
+                  itemCount: tr("recentSearch").length,
                   separatorBuilder: (BuildContext context, int index) {
                     return SizedBox(
                       height: AppSizeManager.s10.h,
@@ -148,7 +160,7 @@ class SearchView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    StringManager.trendyProduct,
+                    tr("trendyProduct"),
                     style: TextStyleManager.getMediumTextStyle(
                       color: ColorManager.subFontColor,
                       letterSpacing: 0,
@@ -165,7 +177,7 @@ class SearchView extends StatelessWidget {
                       );
                     },
                     child: Text(
-                      StringManager.seeAll,
+                      tr("seeAll"),
                       style: TextStyleManager.getRegularTextStyle(
                         color: ColorManager.seeAllColor,
                         letterSpacing: 0,
@@ -201,7 +213,7 @@ class SearchView extends StatelessWidget {
                 height: AppSizeManager.s20.h,
               ),
               Text(
-                StringManager.recommended,
+                tr("recommended"),
                 style: TextStyleManager.getMediumTextStyle(
                   color: ColorManager.subFontColor,
                   fontSize: FontSizeManager.s16.sp,
@@ -250,14 +262,15 @@ class SearchView extends StatelessWidget {
                                 children: [
                                   Expanded(
                                     child: Text(
-                                      StringManager.caesarMensHoodie,
+                                      tr("caesarMensHoodie"),
                                       maxLines: 2,
                                       overflow: TextOverflow.ellipsis,
-                                      style: TextStyleManager.getMediumTextStyle(
-                                          color:
-                                              ColorManager.popularProductNameColor,
-                                          letterSpacing: 0,
-                                          fontSize: FontSizeManager.s12.sp),
+                                      style:
+                                          TextStyleManager.getMediumTextStyle(
+                                              color: ColorManager
+                                                  .popularProductNameColor,
+                                              letterSpacing: 0,
+                                              fontSize: FontSizeManager.s12.sp),
                                     ),
                                   ),
                                   SizedBox(
@@ -272,10 +285,11 @@ class SearchView extends StatelessWidget {
                                 ],
                               ),
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    StringManager.prise + '\$',
+                                    tr("prise") + '\$',
                                     style: TextStyleManager.getRegularTextStyle(
                                       color: ColorManager.seeAllColor,
                                       letterSpacing: 0,

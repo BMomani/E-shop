@@ -4,12 +4,12 @@ import 'package:e_shop/presentation/resources/font_manager.dart';
 import 'package:e_shop/presentation/resources/reusable/animation_route.dart';
 import 'package:e_shop/presentation/resources/reusable/carosul.dart';
 import 'package:e_shop/presentation/resources/reusable/dot_indicator.dart';
-import 'package:e_shop/presentation/resources/string_manager.dart';
 import 'package:e_shop/presentation/resources/text_style_manager.dart';
 import 'package:e_shop/presentation/resources/value_manager.dart';
 import 'package:e_shop/presentation/view_model/home_view_model.dart';
 import 'package:e_shop/presentation/views/home_view/help_views/side_menu.dart';
 import 'package:e_shop/presentation/views/home_view/help_views/sub_gategory.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -32,7 +32,7 @@ class CategoriesView extends StatelessWidget {
           ),
         ),
         title: Text(
-          StringManager.navigationBarCategories,
+          tr("navigationBarCategories"),
           style: Theme.of(context).textTheme.headline5,
         ),
         actions: [
@@ -65,7 +65,7 @@ class CategoriesView extends StatelessWidget {
           child: Column(
             children: [
               Consumer<HomeViewModel>(
-    builder: (context, home, child) => Carousel(
+                builder: (context, home, child) => Carousel(
                   items: [
                     GestureDetector(
                       onTap: () {
@@ -88,16 +88,19 @@ class CategoriesView extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Container(
-                                  width: MediaQuery.of(context).size.width*.4,
+                                  width: MediaQuery.of(context).size.width * .4,
                                   color: ColorManager.offerColor,
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.end,
                                     children: [
                                       Text(
-                                        StringManager.womenFashion,
-                                        style: TextStyleManager.getBoldTextStyle(
-                                            color: ColorManager.activeSlider,
-                                            fontSize: FontSizeManager.s22.sp),
+                                        tr("womenFashion"),
+                                        style:
+                                            TextStyleManager.getBoldTextStyle(
+                                                color:
+                                                    ColorManager.activeSlider,
+                                                fontSize:
+                                                    FontSizeManager.s22.sp),
                                       ),
                                       SizedBox(
                                         height: AppSizeManager.s5.h,
@@ -106,11 +109,13 @@ class CategoriesView extends StatelessWidget {
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
                                           Text(
-                                            StringManager.bestSeller,
-                                            style: TextStyleManager.getMediumTextStyle(
-                                                color: ColorManager
-                                                    .bottomNavigationTextColor,
-                                                fontSize: FontSizeManager.s13.sp),
+                                            tr("bestSeller"),
+                                            style: TextStyleManager
+                                                .getMediumTextStyle(
+                                                    color: ColorManager
+                                                        .bottomNavigationTextColor,
+                                                    fontSize:
+                                                        FontSizeManager.s13.sp),
                                           ),
                                           SizedBox(
                                             width: AppSizeManager.s4.w,
@@ -122,11 +127,10 @@ class CategoriesView extends StatelessWidget {
                                 ),
                                 Container(
                                   alignment: Alignment.centerRight,
-                                  width: MediaQuery.of(context).size.width*.4,
+                                  width: MediaQuery.of(context).size.width * .4,
                                   color: ColorManager.offerColor,
                                   child: DotIndicator(
-                                      index: home
-                                          .categoriesCarouselIndex,
+                                      index: home.categoriesCarouselIndex,
                                       dotsCount: 5),
                                 ),
                               ],
@@ -161,16 +165,19 @@ class CategoriesView extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Container(
-                                  width: MediaQuery.of(context).size.width*.4,
+                                  width: MediaQuery.of(context).size.width * .4,
                                   color: ColorManager.offerColor,
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.end,
                                     children: [
                                       Text(
-                                        StringManager.womenFashion,
-                                        style: TextStyleManager.getBoldTextStyle(
-                                            color: ColorManager.activeSlider,
-                                            fontSize: FontSizeManager.s22.sp),
+                                        tr("womenFashion"),
+                                        style:
+                                            TextStyleManager.getBoldTextStyle(
+                                                color:
+                                                    ColorManager.activeSlider,
+                                                fontSize:
+                                                    FontSizeManager.s22.sp),
                                       ),
                                       SizedBox(
                                         height: AppSizeManager.s5.h,
@@ -179,11 +186,13 @@ class CategoriesView extends StatelessWidget {
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
                                           Text(
-                                            StringManager.bestSeller,
-                                            style: TextStyleManager.getMediumTextStyle(
-                                                color: ColorManager
-                                                    .bottomNavigationTextColor,
-                                                fontSize: FontSizeManager.s13.sp),
+                                            tr("bestSeller"),
+                                            style: TextStyleManager
+                                                .getMediumTextStyle(
+                                                    color: ColorManager
+                                                        .bottomNavigationTextColor,
+                                                    fontSize:
+                                                        FontSizeManager.s13.sp),
                                           ),
                                           SizedBox(
                                             width: AppSizeManager.s4.w,
@@ -195,11 +204,10 @@ class CategoriesView extends StatelessWidget {
                                 ),
                                 Container(
                                   alignment: Alignment.centerRight,
-                                  width: MediaQuery.of(context).size.width*.4,
+                                  width: MediaQuery.of(context).size.width * .4,
                                   color: ColorManager.offerColor,
                                   child: DotIndicator(
-                                      index: home
-                                          .categoriesCarouselIndex,
+                                      index: home.categoriesCarouselIndex,
                                       dotsCount: 5),
                                 ),
                               ],
@@ -234,16 +242,19 @@ class CategoriesView extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Container(
-                                  width: MediaQuery.of(context).size.width*.4,
+                                  width: MediaQuery.of(context).size.width * .4,
                                   color: ColorManager.offerColor,
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.end,
                                     children: [
                                       Text(
-                                        StringManager.womenFashion,
-                                        style: TextStyleManager.getBoldTextStyle(
-                                            color: ColorManager.activeSlider,
-                                            fontSize: FontSizeManager.s22.sp),
+                                        tr("womenFashion"),
+                                        style:
+                                            TextStyleManager.getBoldTextStyle(
+                                                color:
+                                                    ColorManager.activeSlider,
+                                                fontSize:
+                                                    FontSizeManager.s22.sp),
                                       ),
                                       SizedBox(
                                         height: AppSizeManager.s5.h,
@@ -252,11 +263,13 @@ class CategoriesView extends StatelessWidget {
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
                                           Text(
-                                            StringManager.bestSeller,
-                                            style: TextStyleManager.getMediumTextStyle(
-                                                color: ColorManager
-                                                    .bottomNavigationTextColor,
-                                                fontSize: FontSizeManager.s13.sp),
+                                            tr("bestSeller"),
+                                            style: TextStyleManager
+                                                .getMediumTextStyle(
+                                                    color: ColorManager
+                                                        .bottomNavigationTextColor,
+                                                    fontSize:
+                                                        FontSizeManager.s13.sp),
                                           ),
                                           SizedBox(
                                             width: AppSizeManager.s4.w,
@@ -268,11 +281,10 @@ class CategoriesView extends StatelessWidget {
                                 ),
                                 Container(
                                   alignment: Alignment.centerRight,
-                                  width: MediaQuery.of(context).size.width*.4,
+                                  width: MediaQuery.of(context).size.width * .4,
                                   color: ColorManager.offerColor,
                                   child: DotIndicator(
-                                      index: home
-                                          .categoriesCarouselIndex,
+                                      index: home.categoriesCarouselIndex,
                                       dotsCount: 5),
                                 ),
                               ],
@@ -307,16 +319,19 @@ class CategoriesView extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Container(
-                                  width: MediaQuery.of(context).size.width*.4,
+                                  width: MediaQuery.of(context).size.width * .4,
                                   color: ColorManager.offerColor,
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.end,
                                     children: [
                                       Text(
-                                        StringManager.womenFashion,
-                                        style: TextStyleManager.getBoldTextStyle(
-                                            color: ColorManager.activeSlider,
-                                            fontSize: FontSizeManager.s22.sp),
+                                        tr("womenFashion"),
+                                        style:
+                                            TextStyleManager.getBoldTextStyle(
+                                                color:
+                                                    ColorManager.activeSlider,
+                                                fontSize:
+                                                    FontSizeManager.s22.sp),
                                       ),
                                       SizedBox(
                                         height: AppSizeManager.s5.h,
@@ -325,11 +340,13 @@ class CategoriesView extends StatelessWidget {
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
                                           Text(
-                                            StringManager.bestSeller,
-                                            style: TextStyleManager.getMediumTextStyle(
-                                                color: ColorManager
-                                                    .bottomNavigationTextColor,
-                                                fontSize: FontSizeManager.s13.sp),
+                                            tr("bestSeller"),
+                                            style: TextStyleManager
+                                                .getMediumTextStyle(
+                                                    color: ColorManager
+                                                        .bottomNavigationTextColor,
+                                                    fontSize:
+                                                        FontSizeManager.s13.sp),
                                           ),
                                           SizedBox(
                                             width: AppSizeManager.s4.w,
@@ -341,11 +358,10 @@ class CategoriesView extends StatelessWidget {
                                 ),
                                 Container(
                                   alignment: Alignment.centerRight,
-                                  width: MediaQuery.of(context).size.width*.4,
+                                  width: MediaQuery.of(context).size.width * .4,
                                   color: ColorManager.offerColor,
                                   child: DotIndicator(
-                                      index: home
-                                          .categoriesCarouselIndex,
+                                      index: home.categoriesCarouselIndex,
                                       dotsCount: 5),
                                 ),
                               ],
@@ -380,16 +396,19 @@ class CategoriesView extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Container(
-                                  width: MediaQuery.of(context).size.width*.4,
+                                  width: MediaQuery.of(context).size.width * .4,
                                   color: ColorManager.offerColor,
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.end,
                                     children: [
                                       Text(
-                                        StringManager.womenFashion,
-                                        style: TextStyleManager.getBoldTextStyle(
-                                            color: ColorManager.activeSlider,
-                                            fontSize: FontSizeManager.s22.sp),
+                                        tr("womenFashion"),
+                                        style:
+                                            TextStyleManager.getBoldTextStyle(
+                                                color:
+                                                    ColorManager.activeSlider,
+                                                fontSize:
+                                                    FontSizeManager.s22.sp),
                                       ),
                                       SizedBox(
                                         height: AppSizeManager.s5.h,
@@ -398,11 +417,13 @@ class CategoriesView extends StatelessWidget {
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
                                           Text(
-                                            StringManager.bestSeller,
-                                            style: TextStyleManager.getMediumTextStyle(
-                                                color: ColorManager
-                                                    .bottomNavigationTextColor,
-                                                fontSize: FontSizeManager.s13.sp),
+                                            tr("bestSeller"),
+                                            style: TextStyleManager
+                                                .getMediumTextStyle(
+                                                    color: ColorManager
+                                                        .bottomNavigationTextColor,
+                                                    fontSize:
+                                                        FontSizeManager.s13.sp),
                                           ),
                                           SizedBox(
                                             width: AppSizeManager.s4.w,
@@ -414,11 +435,10 @@ class CategoriesView extends StatelessWidget {
                                 ),
                                 Container(
                                   alignment: Alignment.centerRight,
-                                  width: MediaQuery.of(context).size.width*.4,
+                                  width: MediaQuery.of(context).size.width * .4,
                                   color: ColorManager.offerColor,
                                   child: DotIndicator(
-                                      index: home
-                                          .categoriesCarouselIndex,
+                                      index: home.categoriesCarouselIndex,
                                       dotsCount: 5),
                                 ),
                               ],
@@ -432,7 +452,6 @@ class CategoriesView extends StatelessWidget {
                             ),
                           )),
                     ),
-
                   ],
                   onChanged: (int index) {
                     home.categoriesCarouselChangeIndex(index);
@@ -476,7 +495,7 @@ class CategoriesView extends StatelessWidget {
                               height: AppSizeManager.s10.h,
                             ),
                             Text(
-                              StringManager.hoodies,
+                              tr("hoodies"),
                               style: TextStyleManager.getMediumTextStyle(
                                 color: ColorManager.subFontColor,
                               ),
@@ -496,7 +515,7 @@ class CategoriesView extends StatelessWidget {
                         Navigator.of(context).push(
                           AnimationRoute(
                             pageBuilder: (context, animation1, animation2) =>
-                            const SubCategory(),
+                                const SubCategory(),
                           ),
                         );
                       },
@@ -513,22 +532,27 @@ class CategoriesView extends StatelessWidget {
                               children: [
                                 Container(
                                   color: ColorManager.offerColor2,
-                                  width: MediaQuery.of(context).size.width*.4,
+                                  width: MediaQuery.of(context).size.width * .4,
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.end,
                                     children: [
                                       Text(
-                                        StringManager.menFashion,
-                                        style: TextStyleManager.getBoldTextStyle(
-                                            color: ColorManager.activeSlider,
-                                            fontSize: FontSizeManager.s22.sp),
+                                        tr("menFashion"),
+                                        style:
+                                            TextStyleManager.getBoldTextStyle(
+                                                color:
+                                                    ColorManager.activeSlider,
+                                                fontSize:
+                                                    FontSizeManager.s22.sp),
                                       ),
                                       Text(
-                                        StringManager.bestSeller,
-                                        style: TextStyleManager.getMediumTextStyle(
-                                            color: ColorManager
-                                                .bottomNavigationTextColor,
-                                            fontSize: FontSizeManager.s14.sp),
+                                        tr("bestSeller"),
+                                        style:
+                                            TextStyleManager.getMediumTextStyle(
+                                                color: ColorManager
+                                                    .bottomNavigationTextColor,
+                                                fontSize:
+                                                    FontSizeManager.s14.sp),
                                       ),
                                     ],
                                   ),
@@ -536,7 +560,7 @@ class CategoriesView extends StatelessWidget {
                                 Container(
                                   alignment: Alignment.centerRight,
                                   color: ColorManager.offerColor2,
-                                  width: MediaQuery.of(context).size.width*.4,
+                                  width: MediaQuery.of(context).size.width * .4,
                                   child: DotIndicator(
                                       index: home.categoriesCarouselIndex,
                                       dotsCount: 5),
@@ -557,7 +581,7 @@ class CategoriesView extends StatelessWidget {
                         Navigator.of(context).push(
                           AnimationRoute(
                             pageBuilder: (context, animation1, animation2) =>
-                            const SubCategory(),
+                                const SubCategory(),
                           ),
                         );
                       },
@@ -574,22 +598,27 @@ class CategoriesView extends StatelessWidget {
                               children: [
                                 Container(
                                   color: ColorManager.offerColor2,
-                                  width: MediaQuery.of(context).size.width*.4,
+                                  width: MediaQuery.of(context).size.width * .4,
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.end,
                                     children: [
                                       Text(
-                                        StringManager.menFashion,
-                                        style: TextStyleManager.getBoldTextStyle(
-                                            color: ColorManager.activeSlider,
-                                            fontSize: FontSizeManager.s22.sp),
+                                        tr("menFashion"),
+                                        style:
+                                            TextStyleManager.getBoldTextStyle(
+                                                color:
+                                                    ColorManager.activeSlider,
+                                                fontSize:
+                                                    FontSizeManager.s22.sp),
                                       ),
                                       Text(
-                                        StringManager.bestSeller,
-                                        style: TextStyleManager.getMediumTextStyle(
-                                            color: ColorManager
-                                                .bottomNavigationTextColor,
-                                            fontSize: FontSizeManager.s14.sp),
+                                        tr("bestSeller"),
+                                        style:
+                                            TextStyleManager.getMediumTextStyle(
+                                                color: ColorManager
+                                                    .bottomNavigationTextColor,
+                                                fontSize:
+                                                    FontSizeManager.s14.sp),
                                       ),
                                     ],
                                   ),
@@ -597,7 +626,7 @@ class CategoriesView extends StatelessWidget {
                                 Container(
                                   alignment: Alignment.centerRight,
                                   color: ColorManager.offerColor2,
-                                  width: MediaQuery.of(context).size.width*.4,
+                                  width: MediaQuery.of(context).size.width * .4,
                                   child: DotIndicator(
                                       index: home.categoriesCarouselIndex,
                                       dotsCount: 5),
@@ -618,7 +647,7 @@ class CategoriesView extends StatelessWidget {
                         Navigator.of(context).push(
                           AnimationRoute(
                             pageBuilder: (context, animation1, animation2) =>
-                            const SubCategory(),
+                                const SubCategory(),
                           ),
                         );
                       },
@@ -635,22 +664,27 @@ class CategoriesView extends StatelessWidget {
                               children: [
                                 Container(
                                   color: ColorManager.offerColor2,
-                                  width: MediaQuery.of(context).size.width*.4,
+                                  width: MediaQuery.of(context).size.width * .4,
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.end,
                                     children: [
                                       Text(
-                                        StringManager.menFashion,
-                                        style: TextStyleManager.getBoldTextStyle(
-                                            color: ColorManager.activeSlider,
-                                            fontSize: FontSizeManager.s22.sp),
+                                        tr("menFashion"),
+                                        style:
+                                            TextStyleManager.getBoldTextStyle(
+                                                color:
+                                                    ColorManager.activeSlider,
+                                                fontSize:
+                                                    FontSizeManager.s22.sp),
                                       ),
                                       Text(
-                                        StringManager.bestSeller,
-                                        style: TextStyleManager.getMediumTextStyle(
-                                            color: ColorManager
-                                                .bottomNavigationTextColor,
-                                            fontSize: FontSizeManager.s14.sp),
+                                        tr("bestSeller"),
+                                        style:
+                                            TextStyleManager.getMediumTextStyle(
+                                                color: ColorManager
+                                                    .bottomNavigationTextColor,
+                                                fontSize:
+                                                    FontSizeManager.s14.sp),
                                       ),
                                     ],
                                   ),
@@ -658,7 +692,7 @@ class CategoriesView extends StatelessWidget {
                                 Container(
                                   alignment: Alignment.centerRight,
                                   color: ColorManager.offerColor2,
-                                  width: MediaQuery.of(context).size.width*.4,
+                                  width: MediaQuery.of(context).size.width * .4,
                                   child: DotIndicator(
                                       index: home.categoriesCarouselIndex,
                                       dotsCount: 5),
@@ -679,7 +713,7 @@ class CategoriesView extends StatelessWidget {
                         Navigator.of(context).push(
                           AnimationRoute(
                             pageBuilder: (context, animation1, animation2) =>
-                            const SubCategory(),
+                                const SubCategory(),
                           ),
                         );
                       },
@@ -696,22 +730,27 @@ class CategoriesView extends StatelessWidget {
                               children: [
                                 Container(
                                   color: ColorManager.offerColor2,
-                                  width: MediaQuery.of(context).size.width*.4,
+                                  width: MediaQuery.of(context).size.width * .4,
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.end,
                                     children: [
                                       Text(
-                                        StringManager.menFashion,
-                                        style: TextStyleManager.getBoldTextStyle(
-                                            color: ColorManager.activeSlider,
-                                            fontSize: FontSizeManager.s22.sp),
+                                        tr("menFashion"),
+                                        style:
+                                            TextStyleManager.getBoldTextStyle(
+                                                color:
+                                                    ColorManager.activeSlider,
+                                                fontSize:
+                                                    FontSizeManager.s22.sp),
                                       ),
                                       Text(
-                                        StringManager.bestSeller,
-                                        style: TextStyleManager.getMediumTextStyle(
-                                            color: ColorManager
-                                                .bottomNavigationTextColor,
-                                            fontSize: FontSizeManager.s14.sp),
+                                        tr("bestSeller"),
+                                        style:
+                                            TextStyleManager.getMediumTextStyle(
+                                                color: ColorManager
+                                                    .bottomNavigationTextColor,
+                                                fontSize:
+                                                    FontSizeManager.s14.sp),
                                       ),
                                     ],
                                   ),
@@ -719,7 +758,7 @@ class CategoriesView extends StatelessWidget {
                                 Container(
                                   alignment: Alignment.centerRight,
                                   color: ColorManager.offerColor2,
-                                  width: MediaQuery.of(context).size.width*.4,
+                                  width: MediaQuery.of(context).size.width * .4,
                                   child: DotIndicator(
                                       index: home.categoriesCarouselIndex,
                                       dotsCount: 5),
@@ -740,7 +779,7 @@ class CategoriesView extends StatelessWidget {
                         Navigator.of(context).push(
                           AnimationRoute(
                             pageBuilder: (context, animation1, animation2) =>
-                            const SubCategory(),
+                                const SubCategory(),
                           ),
                         );
                       },
@@ -757,22 +796,27 @@ class CategoriesView extends StatelessWidget {
                               children: [
                                 Container(
                                   color: ColorManager.offerColor2,
-                                  width: MediaQuery.of(context).size.width*.4,
+                                  width: MediaQuery.of(context).size.width * .4,
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.end,
                                     children: [
                                       Text(
-                                        StringManager.menFashion,
-                                        style: TextStyleManager.getBoldTextStyle(
-                                            color: ColorManager.activeSlider,
-                                            fontSize: FontSizeManager.s22.sp),
+                                        tr("menFashion"),
+                                        style:
+                                            TextStyleManager.getBoldTextStyle(
+                                                color:
+                                                    ColorManager.activeSlider,
+                                                fontSize:
+                                                    FontSizeManager.s22.sp),
                                       ),
                                       Text(
-                                        StringManager.bestSeller,
-                                        style: TextStyleManager.getMediumTextStyle(
-                                            color: ColorManager
-                                                .bottomNavigationTextColor,
-                                            fontSize: FontSizeManager.s14.sp),
+                                        tr("bestSeller"),
+                                        style:
+                                            TextStyleManager.getMediumTextStyle(
+                                                color: ColorManager
+                                                    .bottomNavigationTextColor,
+                                                fontSize:
+                                                    FontSizeManager.s14.sp),
                                       ),
                                     ],
                                   ),
@@ -780,7 +824,7 @@ class CategoriesView extends StatelessWidget {
                                 Container(
                                   alignment: Alignment.centerRight,
                                   color: ColorManager.offerColor2,
-                                  width: MediaQuery.of(context).size.width*.4,
+                                  width: MediaQuery.of(context).size.width * .4,
                                   child: DotIndicator(
                                       index: home.categoriesCarouselIndex,
                                       dotsCount: 5),
@@ -796,7 +840,6 @@ class CategoriesView extends StatelessWidget {
                             ),
                           )),
                     ),
-
                   ],
                   onChanged: (int index) {
                     home.categoriesCarouselChangeIndex(index);
@@ -840,7 +883,7 @@ class CategoriesView extends StatelessWidget {
                               height: AppSizeManager.s10.h,
                             ),
                             Text(
-                              StringManager.hoodies,
+                              tr("hoodies"),
                               style: TextStyleManager.getMediumTextStyle(
                                 color: ColorManager.subFontColor,
                               ),

@@ -104,7 +104,8 @@ class StringManager {
   static const String recent = 'Recent Search';
   static const String resulTitle = 'Men Blue Denim Jacket';
   static const String shirt = 'Formal Shirt';
-  static const String shirtDescription = 'Black Zipper Removable Cappuccino Pump Jacket For Unisex';
+  static const String shirtDescription =
+      'Black Zipper Removable Cappuccino Pump Jacket For Unisex';
   static const String description = 'Description';
   static const String review = 'Review';
   static const String ask = 'Ask Question';
@@ -119,13 +120,16 @@ class StringManager {
 
   static const String addPlace = 'Add Place';
   static const String home = 'Home';
-  static const String homeAddress = 'There are many variations of passages of  available, but the majorities '
+  static const String homeAddress =
+      'There are many variations of passages of  available, but the majorities '
       'have suffered There are many variations of passages of Lorem ';
   static const String mobile = 'Mobile : ';
   static const String office = 'Office : ';
-  static const String officeAddress = 'There are many variations of passages of  available,'
+  static const String officeAddress =
+      'There are many variations of passages of  available,'
       ' but the majorities have suffered There are many variations of passages of Lorem ';
-  static const String descriptionContent = 'There are many variations of passages of Lorem Ipsum available, '
+  static const String descriptionContent =
+      'There are many variations of passages of Lorem Ipsum available, '
       'but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t '
       'look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there '
       'isn\'t anything embarrassing hidden in the middle of text.';
@@ -136,14 +140,14 @@ class StringManager {
   static const String deliveryPrice1 = 'Shipping EGP 22.23';
   static const String deliveryPrice2 = 'Shipping EGP 22.23';
 
-
-  static const String deliveryDescription1 = 'Available for pickup between 28 Feb and 09 Mar On request within 2hrs 1mints';
-  static const String deliveryDescription2 = 'Available for pickup between 28 Feb and 09 Mar On request within 2hrs 1mints';
-  static const String deliveryDescription3 = 'Returning products for free for a period of 14 days '
+  static const String deliveryDescription1 =
+      'Available for pickup between 28 Feb and 09 Mar On request within 2hrs 1mints';
+  static const String deliveryDescription2 =
+      'Available for pickup between 28 Feb and 09 Mar On request within 2hrs 1mints';
+  static const String deliveryDescription3 =
+      'Returning products for free for a period of 14 days '
       '( except for underwear and personal use products ) and up to 30 days for damaged products,'
       ' with the need to report them within 24 hours from the date of receipt. See More';
-
-
 
   static const List<String> categoryFilter = [
     'women\'s fashion',

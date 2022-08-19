@@ -3,11 +3,11 @@ import 'package:e_shop/presentation/resources/color_manager.dart';
 import 'package:e_shop/presentation/resources/font_manager.dart';
 import 'package:e_shop/presentation/resources/reusable/animation_route.dart';
 import 'package:e_shop/presentation/resources/reusable/rate_bar.dart';
-import 'package:e_shop/presentation/resources/string_manager.dart';
 import 'package:e_shop/presentation/resources/text_style_manager.dart';
 import 'package:e_shop/presentation/resources/value_manager.dart';
 import 'package:e_shop/presentation/view_model/home_view_model.dart';
 import 'package:e_shop/presentation/views/home_view/help_views/side_menu.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -30,7 +30,7 @@ class FavoritesView extends StatelessWidget {
           ),
         ),
         title: Text(
-          StringManager.navigationBarFavorites,
+          tr("navigationBarFavorites"),
           style: Theme.of(context).textTheme.headline5,
         ),
         actions: [
@@ -88,7 +88,7 @@ class FavoritesView extends StatelessWidget {
                               height: AppSizeManager.s1.h,
                             ),
                             Text(
-                              StringManager.casualPants,
+                              tr("casualPants"),
                               overflow: TextOverflow.ellipsis,
                               maxLines: 1,
                               style: TextStyleManager.getMediumTextStyle(
@@ -99,9 +99,7 @@ class FavoritesView extends StatelessWidget {
                             Row(
                               children: [
                                 Text(
-                                  StringManager.prise +
-                                      ' - ' +
-                                      StringManager.prise2,
+                                  tr("prise") + ' - ' + tr("prise2"),
                                   style: TextStyleManager.getMediumTextStyle(
                                     color: ColorManager.primaryFontColor
                                         .withOpacity(.5),
@@ -110,7 +108,7 @@ class FavoritesView extends StatelessWidget {
                                 ),
                                 const Spacer(),
                                 Text(
-                                  '-' + StringManager.discount + '%',
+                                  '-' + tr("discount") + '%',
                                   style: TextStyleManager.getMediumTextStyle(
                                     color: ColorManager.primaryColor,
                                     fontSize: FontSizeManager.s12.sp,
@@ -120,7 +118,7 @@ class FavoritesView extends StatelessWidget {
                                   width: AppSizeManager.s10.w,
                                 ),
                                 Text(
-                                  StringManager.actualPrice,
+                                  tr("actualPrice"),
                                   style: TextStyle(
                                     fontWeight: FontWeight.w500,
                                     color: ColorManager
@@ -168,10 +166,10 @@ class FavoritesView extends StatelessWidget {
                                           height: AppSizeManager.s20.h,
                                         ),
                                       ),
-                                      const Expanded(
+                                      Expanded(
                                           child: Center(
                                               child: Text(
-                                        StringManager.counter,
+                                        tr("counter"),
                                       ))),
                                       Expanded(
                                         child: Container(
@@ -206,7 +204,7 @@ class FavoritesView extends StatelessWidget {
                                 Row(
                                   children: [
                                     Text(
-                                      StringManager.rate,
+                                      tr("rate"),
                                       style:
                                           TextStyleManager.getMediumTextStyle(
                                         color: ColorManager.primaryFontColor
@@ -225,7 +223,7 @@ class FavoritesView extends StatelessWidget {
                             Row(
                               children: [
                                 Text(
-                                  StringManager.addToCart,
+                                  tr("addToCart"),
                                   style: TextStyleManager.getMediumTextStyle(
                                     color: ColorManager.primaryFontColor
                                         .withOpacity(.5),
