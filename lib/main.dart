@@ -1,3 +1,4 @@
+import 'package:e_shop/presentation/resources/behavior_manager.dart';
 import 'package:e_shop/presentation/resources/theme_manager.dart';
 import 'package:e_shop/presentation/resources/value_manager.dart';
 import 'package:e_shop/presentation/view_model/on_boarding_view_model.dart';
@@ -52,6 +53,7 @@ class MyApp extends StatelessWidget {
               return tr("app_title");
             },
             theme: ThemeManager.getAppThemeData(),
+            scrollBehavior: BehaviorManager.getAppScrollBehavior(),
             localizationsDelegates: context.localizationDelegates,
             supportedLocales: context.supportedLocales,
             locale: context.locale,
