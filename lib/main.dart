@@ -4,14 +4,22 @@ import 'package:e_shop/presentation/resources/value_manager.dart';
 import 'package:e_shop/presentation/view_model/on_boarding_view_model.dart';
 import 'package:e_shop/presentation/view_model/search_filter_view_model.dart';
 import 'package:e_shop/presentation/view_model/home_view_model.dart';
-import 'package:e_shop/presentation/views/on_boarding_view/on_boarding_view.dart';
+import 'package:e_shop/presentation/views/authentication_view/auth_home_page.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:e_shop/service/auth_service.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
+import 'firebase_options.dart';
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform
+  );
+
   await EasyLocalization.ensureInitialized();
 
   runApp(EasyLocalization(
@@ -30,6 +38,9 @@ Future<void> main() async {
           ChangeNotifierProvider(
             create: (_) => SearchFilterViewModel(),
           ),
+          Provider<AuthService>(
+            create: (_) => AuthService(),
+          )
         ],
         child: const MyApp(),
       )));
@@ -47,8 +58,9 @@ class MyApp extends StatelessWidget {
         ),
         minTextAdapt: true,
         splitScreenMode: true,
-        builder: (BuildContext context) {
+        builder: (BuildContext context, child) {
           return MaterialApp(
+            debugShowCheckedModeBanner: false,
             onGenerateTitle: (BuildContext context) {
               return tr("app_title");
             },
@@ -57,7 +69,7 @@ class MyApp extends StatelessWidget {
             localizationsDelegates: context.localizationDelegates,
             supportedLocales: context.supportedLocales,
             locale: context.locale,
-            home: const OnBoardingView(),
+            home: const AuthHomePage(),
           );
         });
   }
